@@ -1,0 +1,5 @@
+error : (4/30/2020 12:46:13 PM)
+Object reference not set to an instance of an object.
+   at Client.frm1.convertToY(Single tempValue)
+
+Client: 1 (4/30/2020 12:47:16 PM)

@@ -1,0 +1,5 @@
+error : (7/19/2021 10:30:43 AM)
+A blocking operation was interrupted by a call to WSACancelBlockingCall
+   at System.Net.Sockets.Socket.Accept()
+   at Server.frmMain.bwTakeSocketConnections_DoWork(Object sender, DoWorkEventArgs e) in C:\Users\kirchner\Dropbox (Personal)\C# 2017\PrimateTerritory\Server\Server\frmMain.cs:line 652
+
