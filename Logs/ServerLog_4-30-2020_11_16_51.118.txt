@@ -1,9 +1,0 @@
-error : (4/30/2020 11:16:55 AM)
-Index was outside the bounds of the array.
-   at Server.frmSetup3.loadRow(Int32 rowIndex) in C:\Users\ESI\Dropbox\C# 2017\PrimateTerritory\Server\Server\frmSetup3.cs:line 49
-
-error : (4/30/2020 11:17:40 AM)
-A blocking operation was interrupted by a call to WSACancelBlockingCall
-   at System.Net.Sockets.Socket.Accept()
-   at Server.frmMain.bwTakeSocketConnections_DoWork(Object sender, DoWorkEventArgs e) in C:\Users\ESI\Dropbox\C# 2017\PrimateTerritory\Server\Server\frmMain.cs:line 651
-

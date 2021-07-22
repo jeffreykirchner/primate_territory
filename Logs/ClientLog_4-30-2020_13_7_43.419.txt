@@ -1,6 +1,0 @@
-error : (4/30/2020 1:08:22 PM)
-A request to send or receive data was disallowed because the socket is not connected and (when sending on a datagram socket using a sendto call) no address was supplied
-   at System.Net.Sockets.Socket.Shutdown(SocketShutdown how)
-   at Client.SocketClient.close() in C:\Users\ESI\Dropbox\C# 2017\PrimateTerritory\Client\Client\Classes\General\SocketClient.cs:line 77
-   at Client.Common.closeClient() in C:\Users\ESI\Dropbox\C# 2017\PrimateTerritory\Client\Client\Classes\Common.cs:line 407
-

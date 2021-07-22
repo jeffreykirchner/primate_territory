@@ -1,4 +1,0 @@
-error : (4/30/2020 1:08:04 PM)
-Object reference not set to an instance of an object.
-   at Server.frmMain.convertToX(Single tempValue) in C:\Users\ESI\Dropbox\C# 2017\PrimateTerritory\Server\Server\frmMain.cs:line 1139
-
