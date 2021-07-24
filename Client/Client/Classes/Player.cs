@@ -248,14 +248,23 @@ namespace Client
                 if (currentSelectionCost <= 0) return;
                 if (Common.currentPeriod <= 0) return;
 
+                float sharedRevenuePercent=0;
+
+                Treatment t = Common.periods[Common.currentPeriod].treatment;
+
                 Player otherPlayer;
                 if (myID == 1)
+                {
                     otherPlayer = Common.playerlist[2];
+                    sharedRevenuePercent = t.blueRevenuePercent;
+                }
                 else
+                {
                     otherPlayer = Common.playerlist[1];
+                    sharedRevenuePercent = t.redRevenuePercent;
+                }
 
-                Treatment t = Common.periods[Common.currentPeriod].treatment;            
-
+                
                 PointF myPt1 = new PointF(Common.Frm1.convertToX(selectionLeft, t.scaleRange), 0);      //left side location
                 PointF myPt2 = new PointF(Common.Frm1.convertToX(selectionRight, t.scaleRange), 0);     //right side location
 
@@ -277,9 +286,9 @@ namespace Client
                     //fully within other player
                     gp1[gp1Count++] = getFillPath(myPt1,
                                         myPt2,
-                                        new PointF(myPt3.X, myPt3.Y / 2),
-                                        new PointF(myPt4.X, myPt4.Y / 2),
-                                        new PointF(t.pt3.X, t.pt3.Y / 2),
+                                        new PointF(myPt3.X, myPt3.Y * sharedRevenuePercent),
+                                        new PointF(myPt4.X, myPt4.Y * sharedRevenuePercent),
+                                        new PointF(t.pt3.X, t.pt3.Y * sharedRevenuePercent),
                                         selectionLeft, selectionRight);
                 }
                 else if (otherPlayer.selectionLeft>=selectionRight || otherPlayer.selectionRight<=selectionLeft)
@@ -300,9 +309,9 @@ namespace Client
                         //left edge over lap
                         gp1[gp1Count++] = getFillPath(myPt1,
                                           otherPt2,
-                                          new PointF(myPt3.X,myPt3.Y/2),
-                                          new PointF(otherPt4.X, otherPt4.Y / 2),
-                                          new PointF(t.pt3.X,t.pt3.Y/2),
+                                          new PointF(myPt3.X,myPt3.Y * sharedRevenuePercent),
+                                          new PointF(otherPt4.X, otherPt4.Y * sharedRevenuePercent),
+                                          new PointF(t.pt3.X,t.pt3.Y * sharedRevenuePercent),
                                           selectionLeft, otherPlayer.selectionRight);
                     }                   
 
@@ -312,9 +321,9 @@ namespace Client
                         //fully within other player
                         gp1[gp1Count++] = getFillPath(otherPt1,
                                             otherPt2,
-                                            new PointF(otherPt3.X, otherPt3.Y / 2),
-                                            new PointF(otherPt4.X, otherPt4.Y / 2),
-                                            new PointF(t.pt3.X, t.pt3.Y / 2),
+                                            new PointF(otherPt3.X, otherPt3.Y * sharedRevenuePercent),
+                                            new PointF(otherPt4.X, otherPt4.Y * sharedRevenuePercent),
+                                            new PointF(t.pt3.X, t.pt3.Y * sharedRevenuePercent),
                                             otherPlayer.selectionLeft,otherPlayer.selectionRight);                       
                     }
 
@@ -328,9 +337,9 @@ namespace Client
                         //right edge over lap
                         gp1[gp1Count++] = getFillPath(otherPt1,
                                           myPt2,
-                                          new PointF(otherPt3.X, otherPt3.Y / 2),
-                                          new PointF(myPt4.X, myPt4.Y / 2),
-                                          new PointF(t.pt3.X, t.pt3.Y / 2),
+                                          new PointF(otherPt3.X, otherPt3.Y * sharedRevenuePercent),
+                                          new PointF(myPt4.X, myPt4.Y * sharedRevenuePercent),
+                                          new PointF(t.pt3.X, t.pt3.Y * sharedRevenuePercent),
                                           otherPlayer.selectionLeft, selectionRight);
                     }
 
@@ -583,7 +592,10 @@ namespace Client
                     currentMaxRevenue += calcRevenue2(0, selectionRight);
                 }
 
-                currentMinRevenue = currentMaxRevenue / 2;
+                if (Common.myType == 1)
+                    currentMinRevenue = currentMaxRevenue * Common.periods[Common.currentPeriod].treatment.blueRevenuePercent;
+                else
+                    currentMinRevenue = currentMaxRevenue * Common.periods[Common.currentPeriod].treatment.redRevenuePercent;
             }
             catch (Exception ex)
             {

@@ -18,6 +18,9 @@ namespace Client
         public float middleX;
         public float middleY;
 
+        public float blueRevenuePercent;         //percent of revenue going to blue
+        public float redRevenuePercent;          //percent of revenue going to red
+
         public float[] cost = new float[3];
 
         //drawing points
@@ -32,7 +35,7 @@ namespace Client
         public float scaleRange = 0;                      //left and right side scale
         public float scaleHeight = 0;                     //height of the scale
 
-        public void fromString(ref string[] msgtokens,ref int nextToken)
+        public void fromString(ref string[] msgtokens,ref int nextToken, int myType)
         {
             try
             {
@@ -46,6 +49,9 @@ namespace Client
 
                 cost[1] = float.Parse(msgtokens[nextToken++]);
                 cost[2] = float.Parse(msgtokens[nextToken++]);
+
+                blueRevenuePercent = float.Parse(msgtokens[nextToken++]);
+                redRevenuePercent = float.Parse(msgtokens[nextToken++]);
 
                 scaleRange = float.Parse(msgtokens[nextToken++]);
                 scaleHeight = float.Parse(msgtokens[nextToken++]);
@@ -65,8 +71,19 @@ namespace Client
                 halfPt2 = new PointF(Common.Frm1.convertToX(rightX, scaleRange),
                                     Common.Frm1.convertToY(rightY / 2, scaleHeight));
 
-                halfPt3 = new PointF(Common.Frm1.convertToX(middleX, scaleRange),
-                                     Common.Frm1.convertToY(middleY/2, scaleHeight));
+                if(myType == 1)
+                {
+                    //blue
+                    halfPt3 = new PointF(Common.Frm1.convertToX(middleX, scaleRange),
+                                         Common.Frm1.convertToY(middleY * blueRevenuePercent, scaleHeight));
+                }
+                else
+                {
+                    //red
+                    halfPt3 = new PointF(Common.Frm1.convertToX(middleX, scaleRange),
+                                         Common.Frm1.convertToY(middleY * redRevenuePercent, scaleHeight));
+                }
+                
 
             }
             catch (Exception ex)

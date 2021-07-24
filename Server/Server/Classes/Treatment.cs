@@ -20,6 +20,9 @@ namespace Server
 
         public float[] cost = new float[3];
 
+        public float blueRevenuePercent;         //percent of revenue going to blue
+        public float redRevenuePercent;          //percent of revenue going to red
+
         public float scaleRange = 0;                      //left and right side scale
         public float scaleHeight = 0;                     //height of the scale
 
@@ -49,6 +52,9 @@ namespace Server
 
                 cost[1] = float.Parse(msgtokens[nextToken++]);
                 cost[2] = float.Parse(msgtokens[nextToken++]);
+
+                blueRevenuePercent = float.Parse(msgtokens[nextToken++]);
+                redRevenuePercent = float.Parse(msgtokens[nextToken++]);
 
                 scaleRange = float.Parse(msgtokens[nextToken++]);
                 scaleHeight = float.Parse(msgtokens[nextToken++]);
@@ -92,6 +98,8 @@ namespace Server
                 str += middleY.ToString() + ";";
                 str += cost[1].ToString() + ";";
                 str += cost[2].ToString() + ";";
+                str += blueRevenuePercent.ToString() + ";";
+                str += redRevenuePercent.ToString() + ";";
                 str += scaleRange.ToString() + ";";
                 str += scaleHeight.ToString() + ";";
 

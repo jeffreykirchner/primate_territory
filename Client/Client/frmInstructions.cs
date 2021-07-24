@@ -165,12 +165,18 @@ namespace Client
                 Player partner;
                 Player p = Common.playerlist[Common.myType];
 
+                float blueRevenuePercent = Common.periods[1].treatment.blueRevenuePercent;
+                float redRevenuePercent = Common.periods[1].treatment.redRevenuePercent;
+
                 if (Common.myType == 1)
                 {
                     RepRTBfield2("color", "blue");
                     RepRTBfield2("Color", "Blue");
                     RepRTBfield2("otherColor", "red");
                     RepRTBfield2("leftOrRight", "left");
+
+                    RepRTBfield2("yourRevenuePercent", string.Format("{0:0.00}", Math.Round(blueRevenuePercent * 100, 2)));
+                    RepRTBfield2("otherRevenuePercent", string.Format("{0:0.00}", Math.Round(redRevenuePercent * 100, 2)));
 
                     partner = Common.playerlist[2];
                 }
@@ -180,6 +186,9 @@ namespace Client
                     RepRTBfield2("Color", "Red");
                     RepRTBfield2("otherColor", "blue");
                     RepRTBfield2("leftOrRight", "right");
+
+                    RepRTBfield2("yourRevenuePercent", string.Format("{0:0.00}", Math.Round(redRevenuePercent * 100, 2)));
+                    RepRTBfield2("otherRevenuePercent", string.Format("{0:0.00}", Math.Round(blueRevenuePercent * 100, 2)));
 
                     partner = Common.playerlist[1];
                 }

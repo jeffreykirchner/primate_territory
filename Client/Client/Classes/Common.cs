@@ -206,7 +206,7 @@ namespace Client
                 for (int i = 1; i <= Common.treatmentCount; i++)
                 {
                     Common.treaments[i] = new Treatment();
-                    Common.treaments[i].fromString(ref msgtokens,ref nextToken);
+                    Common.treaments[i].fromString(ref msgtokens,ref nextToken, myType);
                 }
 
                 for (int i = 1; i <= Common.numberOfPeriods; i++)
@@ -219,7 +219,7 @@ namespace Client
                 for (int i = 1; i <= 2; i++)
                 {
                     playerlist[i] = new Player();
-                    playerlist[i].FromString(ref msgtokens, ref nextToken,i);
+                    playerlist[i].FromString(ref msgtokens, ref nextToken, i);
                 }
 
                 Common.Frm1.setupHeighlightBoundingBoxes();

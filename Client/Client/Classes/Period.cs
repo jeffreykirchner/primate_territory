@@ -8,7 +8,7 @@ namespace Client
 {
     public class Period
     {
-        public Treatment treatment=new Treatment();
+        public Treatment treatment = new Treatment();
         public int treatmentIndex;
 
         public void fromString(ref string[] msgtokens,ref int nextToken)

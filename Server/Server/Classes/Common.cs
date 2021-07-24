@@ -438,6 +438,12 @@ namespace Server
                 float range = 0;
                 float rangeOverlap = 0;
 
+                float revenueMultiplier = 0;
+                if (playerlist[index].myType == 1)
+                    revenueMultiplier = Common.periods[Common.currentPeriod].treatment.blueRevenuePercent;
+                else
+                    revenueMultiplier = Common.periods[Common.currentPeriod].treatment.redRevenuePercent;
+
                 Common.calcCurrentCost(selectionLeft,
                                       selectionRight,
                                       ref cost,
@@ -450,6 +456,7 @@ namespace Server
                                           selectionRight,
                                           otherSelectionLeft,
                                           otherSelectionRight,
+                                          revenueMultiplier,
                                           range);
 
                 float profit = revenue - cost;
@@ -752,6 +759,7 @@ namespace Server
                 }
 
                 cost = (float)Math.Pow(totalRange, 2) * p.treatment.cost[myType] / 2;
+                cost = (float)Math.Round(cost, 2);
                 range = totalRange;
             }
             catch (Exception ex)
@@ -766,6 +774,7 @@ namespace Server
                                               float mySelectionRight,
                                               float otherSelectionLeft,
                                               float otherSelectionRight,
+                                              float revenueMultiplier,
                                               float range)
         {
             try
@@ -791,7 +800,7 @@ namespace Server
                     mySelectionRight <= otherSelectionRight && mySelectionRight >= otherSelectionLeft)
                 {
                     //fully within other player
-                    revenue += Common.calcRevenueArea(myPt3, myPt4, mySelectionLeft, mySelectionRight) / 2;
+                    revenue += Common.calcRevenueArea(myPt3, myPt4, mySelectionLeft, mySelectionRight) * revenueMultiplier;
                     rangeOverlap = range;
                 }
                 else if (otherSelectionLeft >= mySelectionRight || otherSelectionRight <= mySelectionLeft)
@@ -809,7 +818,7 @@ namespace Server
                     else if (mySelectionLeft <= otherSelectionRight && mySelectionRight >= otherSelectionRight)
                     {
                         //left edge over lap
-                        revenue += Common.calcRevenueArea(myPt3, otherPt4, mySelectionLeft, otherSelectionRight) / 2;
+                        revenue += Common.calcRevenueArea(myPt3, otherPt4, mySelectionLeft, otherSelectionRight) * revenueMultiplier;
                         rangeOverlap += Common.getRange(mySelectionLeft, otherSelectionRight);
                     }
 
@@ -821,7 +830,7 @@ namespace Server
                     else if (mySelectionRight <= otherSelectionRight && mySelectionRight >= otherSelectionLeft)
                     {
                         //right edge over lap
-                        revenue += Common.calcRevenueArea(otherPt3, myPt4, otherSelectionLeft, mySelectionRight) / 2;
+                        revenue += Common.calcRevenueArea(otherPt3, myPt4, otherSelectionLeft, mySelectionRight) * revenueMultiplier;
                         rangeOverlap += Common.getRange(otherSelectionLeft, mySelectionRight);
                     }
 
@@ -829,9 +838,11 @@ namespace Server
                     if (mySelectionLeft < otherSelectionLeft && mySelectionRight > otherSelectionRight)
                     {
                         //other player fully within player
-                        revenue += Common.calcRevenueArea(otherPt3, otherPt4, otherSelectionLeft, otherSelectionRight) / 2;
+                        revenue += Common.calcRevenueArea(otherPt3, otherPt4, otherSelectionLeft, otherSelectionRight) * revenueMultiplier;
                         rangeOverlap += Common.getRange(otherSelectionLeft, otherSelectionRight);
                     }
+
+                    revenue = (float)Math.Round(revenue, 2);
 
                 }
             }

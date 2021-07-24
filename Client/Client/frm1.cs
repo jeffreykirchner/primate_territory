@@ -410,7 +410,7 @@ namespace Client
                 g.Transform = leftKeyTransform;
 
                 if((Common.phase != "begin" && Common.showPartnerInfo) || p.myID ==1)
-                    drawKey2(g, Common.playerlist[1],new SolidBrush(p1Color),p3Blue);
+                    drawKey2(g, Common.playerlist[1], new SolidBrush(p1Color), p3Blue);
 
                 g.ResetTransform();
 
@@ -421,7 +421,7 @@ namespace Client
                     g.Transform = rightKeyTransform;
 
                 if ((Common.phase != "begin" && Common.showPartnerInfo) || p.myID == 2)
-                    drawKey2(g, Common.playerlist[2], new SolidBrush(p2Color),p3Red);
+                    drawKey2(g, Common.playerlist[2], new SolidBrush(p2Color), p3Red);
 
                 g.ResetTransform();
 
@@ -451,19 +451,19 @@ namespace Client
             {
                 g.DrawString("Total Revenue:", f18, brush, keyRevenueLocation, fmtR);
                 if (Common.phase == "begin")
-                    g.DrawString(string.Format("{0:0.00}", Math.Round(p.currentMinRevenue, 2)) + " to " + string.Format("{0:0.00}", Math.Round(p.currentMaxRevenue, 2)),
+                    g.DrawString(string.Format("{0:0.00}", p.currentMinRevenue) + " to " + string.Format("{0:0.00}", Math.Round(p.currentMaxRevenue, 2)),
                                  f18,
                                  brush,
                                  keyRevenueLocation,
                                  fmtL);
                 else
-                    g.DrawString(string.Format("{0:0.00}", Math.Round(p.currentRevenue, 2)), f18, brush, keyRevenueLocation, fmtL);
+                    g.DrawString(string.Format("{0:0.00}", p.currentRevenue), f18, brush, keyRevenueLocation, fmtL);
 
                 g.DrawString("- Total Cost:", f18, brush, keyCostLocation, fmtR);
                 if (Common.phase == "begin")
-                    g.DrawString(string.Format("{0:0.00}", Math.Round(p.currentSelectionCost, 2)), f18, brush, keyCostLocation, fmtL);
+                    g.DrawString(string.Format("{0:0.00}", p.currentSelectionCost), f18, brush, keyCostLocation, fmtL);
                 else
-                    g.DrawString(string.Format("{0:0.00}", Math.Round(p.currentCost, 2)), f18, brush, keyCostLocation, fmtL);
+                    g.DrawString(string.Format("{0:0.00}",p.currentCost), f18, brush, keyCostLocation, fmtL);
 
                 //equals line 
                 if(p.myID == Common.myType)
@@ -474,7 +474,7 @@ namespace Client
                 if (Common.phase == "begin")
                 {
                     g.DrawLine(pen, new PointF(-185, 57), new PointF(150, 57));
-                    g.DrawString(string.Format("{0:0.00}", Math.Round(p.currentMinProfit, 2)) + " to " + string.Format("{0:0.00}", Math.Round(p.currentMaxProfit, 2)),
+                    g.DrawString(string.Format("{0:0.00}",p.currentMinProfit) + " to " + string.Format("{0:0.00}", Math.Round(p.currentMaxProfit, 2)),
                                 f18,
                                 brush,
                                 keyProfitLocation,
@@ -483,7 +483,7 @@ namespace Client
                 else
                 {
                     g.DrawLine(pen, new PointF(-185, 57), new PointF(75, 57));
-                    g.DrawString(string.Format("{0:0.00}", Math.Round(p.currentProfit, 2)), f18, brush, keyProfitLocation, fmtL);
+                    g.DrawString(string.Format("{0:0.00}", p.currentProfit), f18, brush, keyProfitLocation, fmtL);
                 }
             }
              catch (Exception ex)
@@ -527,7 +527,7 @@ namespace Client
 
                 Period p = Common.periods[Common.currentPeriod];
                 Treatment t = p.treatment;
-
+                
                 //full value line
                 g.DrawLine(p5Black,
                            t.pt1,

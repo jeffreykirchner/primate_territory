@@ -363,6 +363,12 @@ namespace Server
             {
                 player otherPlayer = Common.playerlist[partner];
 
+                float revenueMultiplier = 0;
+                if (myType == 1)
+                    revenueMultiplier = Common.periods[Common.currentPeriod].treatment.blueRevenuePercent;
+                else
+                    revenueMultiplier = Common.periods[Common.currentPeriod].treatment.redRevenuePercent;
+
                 Common.calcCurrentCost(selectionLeft[Common.currentPeriod],
                                        selectionRight[Common.currentPeriod],
                                        ref cost[Common.currentPeriod],
@@ -375,9 +381,10 @@ namespace Server
                                           selectionRight[Common.currentPeriod],
                                           otherPlayer.selectionLeft[Common.currentPeriod],
                                           otherPlayer.selectionRight[Common.currentPeriod],
+                                          revenueMultiplier,
                                           range[Common.currentPeriod]);
 
-                profit[Common.currentPeriod] = revenue[Common.currentPeriod] - cost[Common.currentPeriod];
+                profit[Common.currentPeriod] = (float)Math.Round(revenue[Common.currentPeriod] - cost[Common.currentPeriod], 2);
 
                 earnings += profit[Common.currentPeriod];
 
