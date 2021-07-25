@@ -586,9 +586,9 @@ namespace Server
 
                     //left handle
                     leftHandle = new RectangleF(Convert.ToInt32(Math.Round(pt1.X - 60)),
-                                                                  Convert.ToInt32(Math.Round(pt1.Y + Common.FrmServer.xTickHeight + 20)),
-                                                                  60,
-                                                                  25);
+                                                                Convert.ToInt32(Math.Round(pt1.Y + Common.FrmServer.xTickHeight + 20)),
+                                                                60,
+                                                                25);
 
                     g.FillRectangle(Brushes.White, leftHandle.X, leftHandle.Y, leftHandle.Width, leftHandle.Height);
                     g.DrawLine(p2Dash, pt1.X, pt1.Y, pt1.X, pt1.Y + Common.FrmServer.xTickHeight + 20);

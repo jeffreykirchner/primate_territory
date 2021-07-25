@@ -891,6 +891,8 @@ namespace Server
 
                 Period p = Common.periods[Common.selectedPeriod];
 
+                player plr = Common.playerlist[Common.selectedPlayer];
+
                 //full value line
                 g.DrawLine(p5Black,
                            p.treatment.pt1,
@@ -901,13 +903,26 @@ namespace Server
                           p.treatment.pt3);
 
                 //half value line
-                g.DrawLine(p5BlackDash,
-                           p.treatment.halfPt1,
-                           p.treatment.halfPt3);
+                if (plr.myType == 1)
+                {
+                    g.DrawLine(p5BlackDash,
+                               p.treatment.halfPt1Blue,
+                               p.treatment.halfPt3Blue);
 
-                g.DrawLine(p5BlackDash,
-                          p.treatment.halfPt2,
-                          p.treatment.halfPt3);
+                    g.DrawLine(p5BlackDash,
+                              p.treatment.halfPt2Blue,
+                              p.treatment.halfPt3Blue);
+                }
+                else
+                {
+                    g.DrawLine(p5BlackDash,
+                               p.treatment.halfPt1Red,
+                               p.treatment.halfPt3Red);
+
+                    g.DrawLine(p5BlackDash,
+                              p.treatment.halfPt2Red,
+                              p.treatment.halfPt3Red);
+                }
 
                 //closing lines
                 g.DrawLine(p5Black,

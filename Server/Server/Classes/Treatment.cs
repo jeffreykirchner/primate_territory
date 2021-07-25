@@ -31,9 +31,13 @@ namespace Server
         public PointF pt2;   //right point
         public PointF pt3;   //middle point, full value
 
-        public PointF halfPt1;   //middle point, half value
-        public PointF halfPt2;   //middle point, half value
-        public PointF halfPt3;   //middle point, half value
+        public PointF halfPt1Blue;   //middle point blue
+        public PointF halfPt2Blue;   //middle point blue
+        public PointF halfPt3Blue;   //middle point blue
+
+        public PointF halfPt1Red;   //middle point red
+        public PointF halfPt2Red;   //middle point red
+        public PointF halfPt3Red;   //middle point red
 
         public void fromString(string str)
         {
@@ -68,14 +72,23 @@ namespace Server
                 pt3 = new PointF(Common.FrmServer.convertToX(middleX,scaleRange),
                                  Common.FrmServer.convertToY(middleY, scaleHeight));
 
-                halfPt1 = new PointF(Common.FrmServer.convertToX(leftX, scaleRange),
-                                    Common.FrmServer.convertToY(leftY / 2, scaleHeight));
+                halfPt1Blue = new PointF(Common.FrmServer.convertToX(leftX, scaleRange),
+                                    Common.FrmServer.convertToY(leftY * blueRevenuePercent, scaleHeight));
 
-                halfPt2 = new PointF(Common.FrmServer.convertToX(rightX, scaleRange),
-                                    Common.FrmServer.convertToY(rightY / 2, scaleHeight));
+                halfPt2Blue = new PointF(Common.FrmServer.convertToX(rightX, scaleRange),
+                                    Common.FrmServer.convertToY(rightY * blueRevenuePercent, scaleHeight));
 
-                halfPt3 = new PointF(Common.FrmServer.convertToX(middleX, scaleRange),
-                                     Common.FrmServer.convertToY(middleY / 2, scaleHeight));
+                halfPt3Blue = new PointF(Common.FrmServer.convertToX(middleX, scaleRange),
+                                     Common.FrmServer.convertToY(middleY * blueRevenuePercent, scaleHeight));
+
+                halfPt1Red = new PointF(Common.FrmServer.convertToX(leftX, scaleRange),
+                                    Common.FrmServer.convertToY(leftY * redRevenuePercent, scaleHeight));
+
+                halfPt2Red = new PointF(Common.FrmServer.convertToX(rightX, scaleRange),
+                                    Common.FrmServer.convertToY(rightY * redRevenuePercent, scaleHeight));
+
+                halfPt3Red = new PointF(Common.FrmServer.convertToX(middleX, scaleRange),
+                                     Common.FrmServer.convertToY(middleY * redRevenuePercent, scaleHeight));
             }
             catch (Exception ex)
             {
