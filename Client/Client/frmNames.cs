@@ -46,7 +46,20 @@ namespace Client
             }
         }
 
-        private void txtName_MouseClick(object sender, MouseEventArgs e)
+        private void frmNames_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                cmdSubmit.Focus();
+                AcceptButton = cmdSubmit;
+            }
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+            }
+        }
+
+        private void txtName_Enter(object sender, EventArgs e)
         {
             try
             {
@@ -63,7 +76,7 @@ namespace Client
             }
         }
 
-        private void txtIDNumber_MouseClick(object sender, MouseEventArgs e)
+        private void txtIDNumber_Enter(object sender, EventArgs e)
         {
             try
             {
@@ -72,19 +85,6 @@ namespace Client
                     txtIDNumber.Text = "";
                     txtIDNumber.ForeColor = Color.Black;
                 }
-            }
-            catch (Exception ex)
-            {
-                EventLog.appEventLog_Write("error :", ex);
-            }
-        }
-
-        private void frmNames_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                cmdSubmit.Focus();
-                AcceptButton = cmdSubmit;
             }
             catch (Exception ex)
             {

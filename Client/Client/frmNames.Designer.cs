@@ -44,11 +44,10 @@
             this.txtIDNumber.Location = new System.Drawing.Point(47, 85);
             this.txtIDNumber.Name = "txtIDNumber";
             this.txtIDNumber.Size = new System.Drawing.Size(306, 29);
-            this.txtIDNumber.TabIndex = 9;
-            this.txtIDNumber.TabStop = false;
+            this.txtIDNumber.TabIndex = 3;
             this.txtIDNumber.Text = "<Your Student ID Number>";
             this.txtIDNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtIDNumber.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtIDNumber_MouseClick);
+            this.txtIDNumber.Enter += new System.EventHandler(this.txtIDNumber_Enter);
             // 
             // lblEarnings
             // 
@@ -68,11 +67,10 @@
             this.txtName.Location = new System.Drawing.Point(47, 50);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(306, 29);
-            this.txtName.TabIndex = 8;
-            this.txtName.TabStop = false;
+            this.txtName.TabIndex = 2;
             this.txtName.Text = "<Your Name Here>";
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtName_MouseClick);
+            this.txtName.Enter += new System.EventHandler(this.txtName_Enter);
             // 
             // cmdSubmit
             // 
@@ -81,8 +79,7 @@
             this.cmdSubmit.Location = new System.Drawing.Point(47, 133);
             this.cmdSubmit.Name = "cmdSubmit";
             this.cmdSubmit.Size = new System.Drawing.Size(306, 42);
-            this.cmdSubmit.TabIndex = 10;
-            this.cmdSubmit.TabStop = false;
+            this.cmdSubmit.TabIndex = 1;
             this.cmdSubmit.Text = "Submit";
             this.cmdSubmit.UseVisualStyleBackColor = false;
             this.cmdSubmit.Click += new System.EventHandler(this.cmdSubmit_Click);

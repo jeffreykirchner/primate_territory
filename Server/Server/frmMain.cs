@@ -143,6 +143,12 @@ namespace Server
                 INI.writeINI(Common.sfile, "GameSettings", "gameName", "ESI Software");
                 File.Copy(Common.sfile, filename);
 
+                //recruiter payment file
+                filename = "Recruiter_Payments_" + tempTime + ".csv";
+                filename = Application.StartupPath.ToString() + "\\datafiles\\" + filename;
+                Common.recruiterDf = File.CreateText(filename);
+                Common.recruiterDf.AutoFlush = true;
+
                 //summary data file
                 filename = "Summary_Data_" + tempTime + ".csv";
                 filename = Application.StartupPath.ToString() + "\\datafiles\\" + filename;
@@ -315,7 +321,8 @@ namespace Server
 
                 if (Common.summaryDf != null) Common.summaryDf.Close();
                 if (Common.replayDf != null) Common.replayDf.Close();
-                               
+                if (Common.recruiterDf != null) Common.recruiterDf.Close();
+
                 bwTakeSocketConnections.CancelAsync();                
                 listener.Close();
 

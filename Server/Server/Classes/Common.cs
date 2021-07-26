@@ -34,6 +34,7 @@ namespace Server
         public static StreamWriter summaryDf;                  //summary data file
         //public static StreamWriter eventsDf;                 //events data file
         public static StreamWriter replayDf;                   //events data file
+        public static StreamWriter recruiterDf;                         //events data file
 
         //global parameters
         public static int numberOfPlayers;                     //number of players needed
@@ -207,20 +208,28 @@ namespace Server
 
                     for (int i = 1; i <= numberOfPlayers; i++)
                     {
+                        string earnings = String.Format(culture, "{0:C}", playerlist[i].earnings / 100);
                         string outstr = "";
 
                         outstr = playerlist[i].inumber + ",";
                         outstr += playerlist[i].name + ",";
                         outstr += playerlist[i].studentID + ",";
-                        outstr += String.Format(culture, "{0:C}", playerlist[i].earnings / 100) + ",";
+                        outstr += earnings + ",";
 
                         summaryDf.WriteLine(outstr);
+
+                        //recruiter earnings file
+                        string outstr2 = playerlist[i].studentID + ",";
+                        outstr2 += earnings + ",";
+
+                        recruiterDf.WriteLine(outstr2);
                     }
 
                     Common.writeReplayJSON();
 
                     summaryDf.Close();                   
                     replayDf.Close();
+                    recruiterDf.Close();
                 }
 
             }
