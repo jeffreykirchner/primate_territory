@@ -588,15 +588,24 @@ namespace Client
                 //x ticks
                 float tempX = 0;
                 float tempY = 0;
-                float tempXIncrement = graphWidth / (t.scaleRange*2);
+                float tempXIncrement = graphWidth / 10;
                 float tempXValue = -t.scaleRange;
+                float tempXValueIncrement = t.scaleRange / 5;
 
-                for(int i=1;i<=t.scaleRange*2+1;i++)
+                for (int i=1;i<=11;i++)
                 {
-                    g.DrawLine(p3Black, new PointF(tempX, tempY), new PointF(tempX,tempY+xTickHeight));
-                    g.DrawString(tempXValue.ToString(), f10, Brushes.Black, new PointF(tempX, tempY + 22), fmt);
+                    StringFormat temp_fmt;
+                    if (i == 11)
+                        temp_fmt = fmtR;
+                    else if (i == 1)
+                        temp_fmt = fmtL;
+                    else
+                        temp_fmt = fmt;
+
+                    g.DrawLine(p3Black, new PointF(tempX, tempY), new PointF(tempX, tempY + xTickHeight));
+                    g.DrawString(string.Format("{0:0.00}", Math.Round(tempXValue, 2)), f10, Brushes.Black, new PointF(tempX, tempY + 22), temp_fmt);
                     tempX += tempXIncrement;
-                    tempXValue++;
+                    tempXValue += tempXValueIncrement;
                 }                              
 
                 //y ticks
@@ -756,7 +765,7 @@ namespace Client
 
         }
 
-        public float convertToX(float tempValue,float range)
+        public float convertToX(float tempValue, float range)
         { 
             try
             {
