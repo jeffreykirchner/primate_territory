@@ -47,11 +47,10 @@
             // 
             this.txtMessages.BackColor = System.Drawing.Color.White;
             this.txtMessages.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMessages.Location = new System.Drawing.Point(16, 972);
-            this.txtMessages.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMessages.Location = new System.Drawing.Point(12, 790);
             this.txtMessages.Name = "txtMessages";
             this.txtMessages.ReadOnly = true;
-            this.txtMessages.Size = new System.Drawing.Size(1241, 37);
+            this.txtMessages.Size = new System.Drawing.Size(932, 31);
             this.txtMessages.TabIndex = 38;
             this.txtMessages.TabStop = false;
             // 
@@ -66,10 +65,9 @@
             this.pnlMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlMain.Location = new System.Drawing.Point(16, 18);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlMain.Location = new System.Drawing.Point(12, 15);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1580, 946);
+            this.pnlMain.Size = new System.Drawing.Size(1186, 769);
             this.pnlMain.TabIndex = 40;
             this.pnlMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlMain_MouseDown);
             this.pnlMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlMain_MouseMove);
@@ -80,10 +78,9 @@
             this.cmdSubmit.AutoSize = true;
             this.cmdSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.cmdSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdSubmit.Location = new System.Drawing.Point(1267, 971);
-            this.cmdSubmit.Margin = new System.Windows.Forms.Padding(4);
+            this.cmdSubmit.Location = new System.Drawing.Point(950, 789);
             this.cmdSubmit.Name = "cmdSubmit";
-            this.cmdSubmit.Size = new System.Drawing.Size(331, 42);
+            this.cmdSubmit.Size = new System.Drawing.Size(248, 34);
             this.cmdSubmit.TabIndex = 41;
             this.cmdSubmit.TabStop = false;
             this.cmdSubmit.Text = "Start";
@@ -101,16 +98,15 @@
             // 
             // frm1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1613, 1023);
+            this.ClientSize = new System.Drawing.Size(1210, 831);
             this.ControlBox = false;
             this.Controls.Add(this.cmdSubmit);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.txtMessages);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm1";
             this.Text = "Client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm1_FormClosing);

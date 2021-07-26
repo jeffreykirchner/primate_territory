@@ -245,7 +245,7 @@ namespace Client
         {
             try
             {
-                if (currentSelectionCost <= 0) return;
+                //if (currentSelectionCost <= 0) return;
                 if (Common.currentPeriod <= 0) return;
 
                 float sharedRevenuePercent=0;
@@ -371,8 +371,8 @@ namespace Client
                 gp2.AddLine(gp2.PathPoints[gp2.PointCount - 1], gp2.PathPoints[0]);
 
                 //gp2.CloseFigure();
-
-                g.FillPath(Brushes.LightYellow, gp2);
+                if (Common.phase != "begin") g.FillPath(Brushes.LightYellow, gp2);
+               
                 Common.Frm1.revenuePath = gp2;
 
             }

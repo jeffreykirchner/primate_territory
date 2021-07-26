@@ -173,6 +173,8 @@ namespace Client
                     if (Common.myType != 1 && Common.myType != 2) return;
                     Player p = Common.playerlist[Common.myType];
 
+                    if (Common.phase == "begin" && cmdSubmit.Visible == false) return;
+
                     if (Convert.ToInt32(e.KeyValue) == Convert.ToInt32(Keys.A))
                     {
                         p.moveLeftHandleLeft();
@@ -308,8 +310,8 @@ namespace Client
                 if (Common.myType != 1 && Common.myType != 2) return;
                 Player p = Common.playerlist[Common.myType];
 
-                if (p.currentSelectionCost == 0 || p.currentMaxRevenue == 0) return;
-
+                //if (p.currentSelectionCost == 0 || p.currentMaxRevenue == 0) return;
+                
                 Matrix mt = g.Transform;
 
                 g.Transform = graphTransform;
@@ -885,6 +887,8 @@ namespace Client
             {
                 if (Common.myType != 1 && Common.myType != 2) return;
 
+                if (Common.phase == "begin" && cmdSubmit.Visible == false) return;
+
                 Player p = Common.playerlist[Common.myType];
                 if (p.isOverLeft(e.Location))
                 {
@@ -1218,5 +1222,6 @@ namespace Client
                 EventLog.appEventLog_Write("error :", ex);
             }
         }
+
     }
 }
