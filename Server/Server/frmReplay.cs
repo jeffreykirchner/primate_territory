@@ -30,9 +30,8 @@ namespace Server
         {
             try
             {
-
                 OpenFileDialog1.FileName = "";
-                OpenFileDialog1.Filter = "Data Files (*.csv)|*.csv| Data Files (*.json)|*.json";
+                OpenFileDialog1.Filter = "Data Files (*.json)|*.json|Data Files (*.csv)|*.csv";
                 OpenFileDialog1.InitialDirectory = Application.StartupPath + "\\DataFiles";
 
                 OpenFileDialog1.ShowDialog();
