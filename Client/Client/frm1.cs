@@ -580,7 +580,7 @@ namespace Client
                 Matrix gt = g.Transform;
                 g.TranslateTransform(-yMargin+10, -graphHeight/2);
                 g.RotateTransform(-90);
-                g.DrawString("Resource Value (¢)", f12, Brushes.DimGray, new PointF(0,0), fmt);
+                g.DrawString($"Resource Value (1 point = {Common.earningsMultiplier}¢)", f12, Brushes.DimGray, new PointF(0,0), fmt);
                 g.Transform = gt;
 
                 Treatment t = Common.periods[Common.currentPeriod].treatment;

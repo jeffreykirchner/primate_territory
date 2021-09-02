@@ -197,6 +197,7 @@ namespace Client
                 RepRTBfield2Color(" Blue", Common.Frm1.p1Color);
                 RepRTBfield2Color(" red", Common.Frm1.p2Color);
                 RepRTBfield2Color(" Red", Common.Frm1.p2Color);
+                RepRTBfield2("earningsMultiplier", Common.earningsMultiplier.ToString());
 
                 RepRTBfield2("leftExample", string.Format("{0:0.00}", Math.Round(Common.instructionPlayerLeft, 2)));
                 RepRTBfield2("rightExample", string.Format("{0:0.00}", Math.Round(Common.instructionPlayerRight, 2)));

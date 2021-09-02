@@ -66,13 +66,15 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtInstructionPartnerLeft2 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.txtEarningsMultiplier = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbTestMode
             // 
             this.cbTestMode.AutoSize = true;
             this.cbTestMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTestMode.Location = new System.Drawing.Point(98, 292);
+            this.cbTestMode.Location = new System.Drawing.Point(108, 342);
             this.cbTestMode.Name = "cbTestMode";
             this.cbTestMode.Size = new System.Drawing.Size(112, 24);
             this.cbTestMode.TabIndex = 39;
@@ -83,7 +85,7 @@
             // 
             this.cbShowInstructions.AutoSize = true;
             this.cbShowInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbShowInstructions.Location = new System.Drawing.Point(325, 292);
+            this.cbShowInstructions.Location = new System.Drawing.Point(335, 342);
             this.cbShowInstructions.Name = "cbShowInstructions";
             this.cbShowInstructions.Size = new System.Drawing.Size(172, 24);
             this.cbShowInstructions.TabIndex = 38;
@@ -246,7 +248,7 @@
             // cmdSaveAndClose
             // 
             this.cmdSaveAndClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdSaveAndClose.Location = new System.Drawing.Point(584, 285);
+            this.cmdSaveAndClose.Location = new System.Drawing.Point(594, 335);
             this.cmdSaveAndClose.Name = "cmdSaveAndClose";
             this.cmdSaveAndClose.Size = new System.Drawing.Size(276, 31);
             this.cmdSaveAndClose.TabIndex = 21;
@@ -296,7 +298,7 @@
             // 
             this.cbShowPartnerInfo.AutoSize = true;
             this.cbShowPartnerInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbShowPartnerInfo.Location = new System.Drawing.Point(325, 262);
+            this.cbShowPartnerInfo.Location = new System.Drawing.Point(335, 312);
             this.cbShowPartnerInfo.Name = "cbShowPartnerInfo";
             this.cbShowPartnerInfo.Size = new System.Drawing.Size(173, 24);
             this.cbShowPartnerInfo.TabIndex = 50;
@@ -427,12 +429,33 @@
             this.label18.Text = "Partner Left Example 2";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // txtEarningsMultiplier
+            // 
+            this.txtEarningsMultiplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEarningsMultiplier.Location = new System.Drawing.Point(349, 236);
+            this.txtEarningsMultiplier.Name = "txtEarningsMultiplier";
+            this.txtEarningsMultiplier.Size = new System.Drawing.Size(162, 26);
+            this.txtEarningsMultiplier.TabIndex = 65;
+            this.txtEarningsMultiplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label19
+            // 
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(19, 238);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(324, 23);
+            this.label19.TabIndex = 64;
+            this.label19.Text = "Exchange Rate (points -> ¢)";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmSetup1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 338);
+            this.ClientSize = new System.Drawing.Size(891, 406);
             this.ControlBox = false;
+            this.Controls.Add(this.txtEarningsMultiplier);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.txtInstructionPartnerRight2);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.txtInstructionPartnerLeft2);
@@ -519,5 +542,7 @@
         internal System.Windows.Forms.Label label17;
         internal System.Windows.Forms.TextBox txtInstructionPartnerLeft2;
         internal System.Windows.Forms.Label label18;
+        internal System.Windows.Forms.TextBox txtEarningsMultiplier;
+        internal System.Windows.Forms.Label label19;
     }
 }

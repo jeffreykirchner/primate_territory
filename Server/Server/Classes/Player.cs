@@ -105,6 +105,7 @@ namespace Server
                 outstr += Common.periodLength + ";";
                 outstr += myType + ";";
                 outstr += Common.locationIncrement + ";";
+                outstr += Common.earningsMultiplier + ";";
                 outstr += Common.showPartnerInfo + ";";
 
                 outstr += Common.instructionPlayerLeft + ";";
@@ -300,6 +301,7 @@ namespace Server
                 str += revenue[Common.currentPeriod] + ",";
                 str += cost[Common.currentPeriod] + ",";
                 str += profit[Common.currentPeriod] + ",";
+                str += profit[Common.currentPeriod] * Common.earningsMultiplier + ",";
 
                 str += p.treatment.leftX + ",";
                 str += p.treatment.leftY + ",";
@@ -386,7 +388,7 @@ namespace Server
 
                 profit[Common.currentPeriod] = (float)Math.Round(revenue[Common.currentPeriod] - cost[Common.currentPeriod], 2);
 
-                earnings += profit[Common.currentPeriod];
+                earnings += profit[Common.currentPeriod] * Common.earningsMultiplier;
 
                 Common.FrmServer.dgMain[3, inumber - 1].Value = string.Format(Common.culture, "{0:C}", Math.Round(earnings/100,2));
             }
