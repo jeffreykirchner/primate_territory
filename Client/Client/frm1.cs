@@ -435,8 +435,8 @@ namespace Client
                 g.ResetTransform();
 
                 //bottom key right
-                g.TranslateTransform(pnlMain.Width - 105, pnlMain.Height - 28);
-                g.DrawString("Total Profit (¢):", f16, Brushes.Black, new PointF(0, 0), fmtR);
+                g.TranslateTransform(pnlMain.Width - 105, pnlMain.Height - 30);
+                g.DrawString("Total Earnings (¢):", f16, Brushes.Black, new PointF(0, 0), fmtR);
                 g.DrawString(string.Format("{0:0.00}", Math.Round(Common.earnings, 2)), f16, Brushes.Black, new PointF(0, 0), fmtL);
 
                 g.Transform = mt;
