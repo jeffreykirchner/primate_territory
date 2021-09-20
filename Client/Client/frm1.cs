@@ -333,7 +333,7 @@ namespace Client
                 if (Common.myType != 1 && Common.myType != 2) return;
                 Player p = Common.playerlist[Common.myType];
 
-                if (p.currentSelectionCost == 0 || p.currentMaxRevenue == 0) return;
+                if (p.currentSelectionCostCents == 0 || p.currentMaxRevenueCents == 0) return;
 
                 Matrix mt = g.Transform;
 
@@ -451,32 +451,32 @@ namespace Client
         {
             try
             {
-                g.DrawString("Total Revenue:", f18, brush, keyRevenueLocation, fmtR);
+                g.DrawString("Total Revenue(¢):", f18, brush, keyRevenueLocation, fmtR);
                 if (Common.phase == "begin")
-                    g.DrawString(string.Format("{0:0.00}", p.currentMinRevenue) + " to " + string.Format("{0:0.00}", Math.Round(p.currentMaxRevenue, 2)),
+                    g.DrawString(string.Format("{0:0.00}", p.currentMinRevenueCents) + " to " + string.Format("{0:0.00}", Math.Round(p.currentMaxRevenueCents, 2)),
                                  f18,
                                  brush,
                                  keyRevenueLocation,
                                  fmtL);
                 else
-                    g.DrawString(string.Format("{0:0.00}", p.currentRevenue), f18, brush, keyRevenueLocation, fmtL);
+                    g.DrawString(string.Format("{0:0.00}", p.currentRevenueCents), f18, brush, keyRevenueLocation, fmtL);
 
-                g.DrawString("- Total Cost:", f18, brush, keyCostLocation, fmtR);
+                g.DrawString("- Total Cost(¢):", f18, brush, keyCostLocation, fmtR);
                 if (Common.phase == "begin")
-                    g.DrawString(string.Format("{0:0.00}", p.currentSelectionCost), f18, brush, keyCostLocation, fmtL);
+                    g.DrawString(string.Format("{0:0.00}", p.currentSelectionCostCents), f18, brush, keyCostLocation, fmtL);
                 else
-                    g.DrawString(string.Format("{0:0.00}",p.currentCost), f18, brush, keyCostLocation, fmtL);
+                    g.DrawString(string.Format("{0:0.00}",p.currentCostCents), f18, brush, keyCostLocation, fmtL);
 
                 //equals line 
                 if(p.myID == Common.myType)
-                    g.DrawString("Your Profit:", f18, brush, keyProfitLocation, fmtR);
+                    g.DrawString("Your Profit(¢):", f18, brush, keyProfitLocation, fmtR);
                 else
-                    g.DrawString("Other's Profit:", f18, brush, keyProfitLocation, fmtR);
+                    g.DrawString("Other's Profit(¢):", f18, brush, keyProfitLocation, fmtR);
 
                 if (Common.phase == "begin")
                 {
                     g.DrawLine(pen, new PointF(-185, 57), new PointF(150, 57));
-                    g.DrawString(string.Format("{0:0.00}",p.currentMinProfit) + " to " + string.Format("{0:0.00}", Math.Round(p.currentMaxProfit, 2)),
+                    g.DrawString(string.Format("{0:0.00}",p.currentMinProfitCents) + " to " + string.Format("{0:0.00}", Math.Round(p.currentMaxProfitCents, 2)),
                                 f18,
                                 brush,
                                 keyProfitLocation,

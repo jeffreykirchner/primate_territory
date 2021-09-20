@@ -334,6 +334,9 @@ namespace Client
                 playerlist[myType].currentCost = float.Parse(msgtokens[nextToken++]);
                 playerlist[myType].currentProfit = float.Parse(msgtokens[nextToken++]);
 
+                playerlist[myType].currentRevenueCents = float.Parse(msgtokens[nextToken++]);
+                playerlist[myType].currentCostCents = float.Parse(msgtokens[nextToken++]);
+
                 Common.Frm1.refreshScreen();
 
             }
@@ -601,6 +604,19 @@ namespace Client
             catch (Exception ex)
             {
                 EventLog.appEventLog_Write("error :", ex);
+            }
+        }
+
+        public static double convertToCents(double value)
+        {
+            try
+            {
+                return Math.Round(value * Common.earningsMultiplier, 2);
+            }
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+                return 0;
             }
         }
 

@@ -478,6 +478,9 @@ namespace Server
                 outstr += cost + ";";
                 outstr += profit + ";";
 
+                outstr = Common.convertToCents(revenue).ToString() + ";";
+                outstr += Common.convertToCents(cost).ToString() + ";";
+
                 playerlist[index].sendCalculationRequest(outstr);
             }
             catch (Exception ex)
@@ -770,7 +773,7 @@ namespace Server
                 }
 
                 cost = (float)Math.Pow(totalRange, 2) * p.treatment.cost[myType] / 2;
-                cost = (float)Math.Round(cost, 2);
+                //cost = (float)Math.Round(cost, 2);
                 range = totalRange;
             }
             catch (Exception ex)
@@ -853,13 +856,26 @@ namespace Server
                         rangeOverlap += Common.getRange(otherSelectionLeft, otherSelectionRight);
                     }
 
-                    revenue = (float)Math.Round(revenue, 2);
+                    //revenue = (float)Math.Round(revenue, 2);
 
                 }
             }
             catch (Exception ex)
             {
                 EventLog.appEventLog_Write("error :", ex);
+            }
+        }
+
+        public static double convertToCents(double value)
+        {
+            try
+            {
+                return Math.Round(value * Common.earningsMultiplier, 2);
+            }
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+                return 0;
             }
         }
 

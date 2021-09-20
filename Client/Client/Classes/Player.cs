@@ -24,16 +24,18 @@ namespace Client
         public RectangleF leftHandle;
         public RectangleF rightHandle;
 
-        public float currentMaxProfit = 0;            //max possible profit given current selection
+        public float currentMaxProfitCents = 0;            //max possible profit given current selection
         public float currentProfit = 0;               //realized profit from last period
-        public float currentMinProfit = 0;            //min posssible profit given current selection
+        public float currentMinProfitCents = 0;            //min posssible profit given current selection
 
-        public float currentMaxRevenue = 0;           //max possible revenue given selection
+        public float currentMaxRevenueCents = 0;           //max possible revenue given selection
         public float currentRevenue = 0;              //realized revenue from last period given other player's selection 
-        public float currentMinRevenue = 0;           //min possible revenue given selection
+        public float currentRevenueCents = 0;         //realized revenue from last period given other player's selection in cents 
+        public float currentMinRevenueCents = 0;           //min possible revenue given selection
 
-        public float currentSelectionCost = 0;        //cost set locally
+        public float currentSelectionCostCents = 0;        //cost set locally
         public float currentCost = 0;                 //cost from last period 
+        public float currentCostCents = 0;            //cost from last period in cents
 
         public float costPercent = 0;                 //percent of revenue cost is consuming  
 
@@ -165,12 +167,12 @@ namespace Client
         {
             try
             {
-                if (currentSelectionCost <= 0) return;
+                if (currentSelectionCostCents <= 0) return;
                 if (Common.currentPeriod <= 0) return;
 
                 Treatment t = Common.periods[Common.currentPeriod].treatment;
 
-                costPercent = currentSelectionCost/ currentMaxRevenue;
+                costPercent = currentSelectionCostCents/ currentMaxRevenueCents;
                 
                 GraphicsPath gp = new GraphicsPath();
 
@@ -559,8 +561,8 @@ namespace Client
                 calcCost();
                 calcRevenue();
 
-                currentMinProfit = currentMinRevenue - currentSelectionCost;
-                currentMaxProfit = currentMaxRevenue - currentSelectionCost;
+                currentMinProfitCents = currentMinRevenueCents - currentSelectionCostCents;
+                currentMaxProfitCents = currentMaxRevenueCents - currentSelectionCostCents;
             }
             catch (Exception ex)
             {
@@ -578,24 +580,27 @@ namespace Client
                 if (selectionRight <= 0)
                 {
                     //left side only
-                    currentMaxRevenue = calcRevenue2(selectionLeft, selectionRight);
+                    currentMaxRevenueCents = calcRevenue2(selectionLeft, selectionRight);
                 }
                 else if (selectionLeft >= 0)
                 {
                     //right side only
-                    currentMaxRevenue = calcRevenue2(selectionLeft, selectionRight);
+                    currentMaxRevenueCents = calcRevenue2(selectionLeft, selectionRight);
                 }
                 else
                 {
                     //both sides
-                    currentMaxRevenue = calcRevenue2(selectionLeft, 0);
-                    currentMaxRevenue += calcRevenue2(0, selectionRight);
+                    currentMaxRevenueCents = calcRevenue2(selectionLeft, 0);
+                    currentMaxRevenueCents += calcRevenue2(0, selectionRight);
                 }
 
                 if (Common.myType == 1)
-                    currentMinRevenue = currentMaxRevenue * Common.periods[Common.currentPeriod].treatment.blueRevenuePercent;
+                    currentMinRevenueCents = currentMaxRevenueCents * Common.periods[Common.currentPeriod].treatment.blueRevenuePercent;
                 else
-                    currentMinRevenue = currentMaxRevenue * Common.periods[Common.currentPeriod].treatment.redRevenuePercent;
+                    currentMinRevenueCents = currentMaxRevenueCents * Common.periods[Common.currentPeriod].treatment.redRevenuePercent;
+
+                currentMinRevenueCents = (float)Common.convertToCents(currentMinRevenueCents);
+                currentMaxRevenueCents = (float)Common.convertToCents(currentMaxRevenueCents);
             }
             catch (Exception ex)
             {
@@ -634,7 +639,7 @@ namespace Client
                 if (Common.myType != 1 && Common.myType != 2) return;
                 //Player p = Common.playerlist[Common.myType];
 
-                currentSelectionCost = calcCost2(selectionLeft, selectionRight);
+                currentSelectionCostCents = (float)Common.convertToCents(calcCost2(selectionLeft, selectionRight));
             }
             catch (Exception ex)
             {
@@ -686,6 +691,10 @@ namespace Client
                 currentRevenue = float.Parse(msgtokens[nextToken++]);
                 currentCost = float.Parse(msgtokens[nextToken++]);
                 currentProfit = float.Parse(msgtokens[nextToken++]);
+
+                currentRevenueCents = float.Parse(msgtokens[nextToken++]);
+                currentCostCents = float.Parse(msgtokens[nextToken++]);
+   
             }
             catch (Exception ex)
             {

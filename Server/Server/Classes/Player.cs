@@ -28,9 +28,10 @@ namespace Server
         public float[] selectionRight = new float[10000];
         public float[] valueRight = new float[10000];
 
-        public float[] profit = new float[10000];
+        public float[] profit = new float[10000];         //earnigs in points
         public float[] revenue = new float[10000];
         public float[] cost = new float[10000];
+
         public float[] range = new float[10000];
         public float[] rangeOverlap = new float[10000];
 
@@ -239,9 +240,15 @@ namespace Server
                 outstr += cost[Common.currentPeriod-1] + ";";
                 outstr += profit[Common.currentPeriod-1] + ";";
 
+                outstr += Common.convertToCents(revenue[Common.currentPeriod - 1]).ToString() + ";";
+                outstr += Common.convertToCents(cost[Common.currentPeriod - 1]).ToString() + ";";
+
                 outstr += Common.playerlist[partner].revenue[Common.currentPeriod-1] + ";";
                 outstr += Common.playerlist[partner].cost[Common.currentPeriod-1] + ";";
                 outstr += Common.playerlist[partner].profit[Common.currentPeriod-1] + ";";
+
+                outstr += Common.convertToCents(Common.playerlist[partner].revenue[Common.currentPeriod - 1]).ToString() + ";";
+                outstr += Common.convertToCents(Common.playerlist[partner].cost[Common.currentPeriod - 1]).ToString() + ";";
 
                 outstr += Common.playerlist[partner].selectionLeft[Common.currentPeriod-1].ToString() + ";";
                 outstr += Common.playerlist[partner].selectionRight[Common.currentPeriod-1].ToString() + ";";
@@ -298,10 +305,13 @@ namespace Server
                 str += valueRight[Common.currentPeriod] + ",";
                 str += range[Common.currentPeriod] + ",";
                 str += rangeOverlap[Common.currentPeriod] + ",";
+
                 str += revenue[Common.currentPeriod] + ",";
                 str += cost[Common.currentPeriod] + ",";
+
+                str += Common.convertToCents(revenue[Common.currentPeriod]).ToString() + ",";
+                str += Common.convertToCents(cost[Common.currentPeriod]).ToString() + ",";
                 str += profit[Common.currentPeriod] + ",";
-                str += profit[Common.currentPeriod] * Common.earningsMultiplier + ",";
 
                 str += p.treatment.leftX + ",";
                 str += p.treatment.leftY + ",";
@@ -386,9 +396,11 @@ namespace Server
                                           revenueMultiplier,
                                           range[Common.currentPeriod]);
 
-                profit[Common.currentPeriod] = (float)Math.Round(revenue[Common.currentPeriod] - cost[Common.currentPeriod], 2);
+                profit[Common.currentPeriod] = (float)Common.convertToCents(revenue[Common.currentPeriod]) - (float)Common.convertToCents(cost[Common.currentPeriod]);
 
-                earnings += profit[Common.currentPeriod] * Common.earningsMultiplier;
+                profit[Common.currentPeriod] = (float)Math.Round(profit[Common.currentPeriod], 2);
+
+                earnings += profit[Common.currentPeriod];
 
                 Common.FrmServer.dgMain[3, inumber - 1].Value = string.Format(Common.culture, "{0:C}", Math.Round(earnings/100,2));
             }
@@ -718,6 +730,8 @@ namespace Server
                     period.Add(new JProperty("Profit", profit[i]));
                     period.Add(new JProperty("Revenue", revenue[i]));
                     period.Add(new JProperty("Cost", cost[i]));
+                    period.Add(new JProperty("Revenue Cents", Common.convertToCents(revenue[i])));
+                    period.Add(new JProperty("Cost Cents", Common.convertToCents(cost[i])));
                     period.Add(new JProperty("Location Range", range[i]));
                     period.Add(new JProperty("Location Range Overlap", rangeOverlap[i]));
 
@@ -763,6 +777,7 @@ namespace Server
                     profit[i] = (float)period["Profit"];
                     revenue[i] = (float)period["Revenue"];
                     cost[i] = (float)period["Cost"];
+
                     range[i] = (float)period["Location Range"];
                     rangeOverlap[i] = (float)period["Location Range Overlap"];
                 }                

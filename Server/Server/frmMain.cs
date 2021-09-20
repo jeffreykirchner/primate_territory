@@ -156,7 +156,7 @@ namespace Server
                 Common.summaryDf = File.CreateText(filename);
                 Common.summaryDf.AutoFlush = true;
 
-                string str = "Period,Treatment,Player,Color,Partner,LeftLocation,LeftValue,RightLocation,RightValue,RangeTotal,RangeOverlap,Revenue,TotalCost,Profit,Earnings(¢),GraphLeftX,GraphLeftY,GraphMiddleX,GraphMiddleY,GraphRightX,GraphRightY,BlueCost,RedCost";
+                string str = "Period,Treatment,Player,Color,Partner,LeftLocation,LeftValue,RightLocation,RightValue,RangeTotal,RangeOverlap,Revenue,TotalCost,Revenue(cents),TotalCost(cents),Earnings(cents),GraphLeftX,GraphLeftY,GraphMiddleX,GraphMiddleY,GraphRightX,GraphRightY,BlueCost,RedCost";
 
                 Common.summaryDf.WriteLine(str);
 
@@ -869,14 +869,14 @@ namespace Server
         {
             try
             {
-                g.DrawString("Total Revenue:", f18, brush, new PointF(0, 0), fmtR);
+                g.DrawString("Total Revenue(¢):", f18, brush, new PointF(0, 0), fmtR);
                 g.DrawString(string.Format("{0:0.00}", Math.Round(p.revenue[Common.selectedPeriod], 2)), f18, brush, new PointF(0, 0), fmtL);
 
-                g.DrawString("- Total Cost:", f18, brush, new PointF(0, 25), fmtR);
+                g.DrawString("- Total Cost(¢):", f18, brush, new PointF(0, 25), fmtR);
                 g.DrawString(string.Format("{0:0.00}", Math.Round(p.cost[Common.selectedPeriod], 2)), f18, brush, new PointF(0, 25), fmtL);
 
                 //equals line 
-                g.DrawString("P" + p.inumber + " Profit:", f18, brush, new PointF(0, 60), fmtR);
+                g.DrawString("P" + p.inumber + " Profit(¢):", f18, brush, new PointF(0, 60), fmtR);
 
                 g.DrawLine(pen, new PointF(-185, 57), new PointF(75, 57));
                 g.DrawString(string.Format("{0:0.00}", Math.Round(p.profit[Common.selectedPeriod], 2)), f18, brush, new PointF(0, 60), fmtL);
