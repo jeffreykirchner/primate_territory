@@ -52,7 +52,7 @@ namespace Client
         public static Treatment[] treaments = new Treatment[100];    //list of each available treatment
         public static int treatmentCount = 0;                        //number of " 
 
-        public static Period[] periods = new Period[1000];           //list of periods
+        public static Period[] periods = new Period[10000];           //list of periods
 
         public static Player[] playerlist = new Player[100];
 
