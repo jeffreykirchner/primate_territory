@@ -222,7 +222,7 @@ namespace Server
 
                         //recruiter earnings file
                         string outstr2 = playerlist[i].studentID + ",";
-                        outstr2 += earnings + ",";
+                        outstr2 += earnings;
 
                         recruiterDf.WriteLine(outstr2);
                     }
