@@ -34,7 +34,7 @@ namespace Server
         public static StreamWriter summaryDf;                  //summary data file
         //public static StreamWriter eventsDf;                 //events data file
         public static StreamWriter replayDf;                   //events data file
-        public static StreamWriter recruiterDf;                         //events data file
+        public static StreamWriter recruiterDf;                //recruiter earnings upload file
 
         //global parameters
         public static int numberOfPlayers;                     //number of players needed
