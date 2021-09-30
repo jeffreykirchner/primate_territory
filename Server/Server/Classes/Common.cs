@@ -476,9 +476,9 @@ namespace Server
 
                 outstr = revenue + ";";
                 outstr += cost + ";";
-                outstr += profit + ";";
+                outstr += Math.Round((float)Common.convertToCents(revenue) - (float)Common.convertToCents(cost), 2) + ";";
 
-                outstr = Common.convertToCents(revenue).ToString() + ";";
+                outstr += Common.convertToCents(revenue).ToString() + ";";
                 outstr += Common.convertToCents(cost).ToString() + ";";
 
                 playerlist[index].sendCalculationRequest(outstr);
