@@ -289,8 +289,11 @@ namespace Server
 
                 string str = "";
 
-                str = Common.currentPeriod + ",";
+                str = Common.parmaterSetName + ",";
+                str += Common.currentPeriod + ",";
                 str += p.treatment.name + ",";
+                str += Common.periods[Common.currentPeriod].treatment.blueRevenuePercent + ",";
+                str += Common.periods[Common.currentPeriod].treatment.redRevenuePercent + ",";
                 str += inumber + ",";
 
                 if (myType == 1)
@@ -320,7 +323,7 @@ namespace Server
                 str += p.treatment.rightX + ",";
                 str += p.treatment.rightY + ",";
                 str += p.treatment.cost[1] + ",";
-                str += p.treatment.cost[2] + ",";
+                str += p.treatment.cost[2];
 
                 Common.summaryDf.WriteLine(str);
             }

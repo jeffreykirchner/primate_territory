@@ -21,6 +21,7 @@ namespace Server
         {
             try
             {
+                txtParmaterSetName.Text = INI.getINI(Common.sfile, "gameSettings", "parmaterSetName");
                 txtNumberOfPlayers.Text = INI.getINI(Common.sfile, "gameSettings", "numberOfPlayers");
                 txtNumberOfPeriods.Text = INI.getINI(Common.sfile, "gameSettings", "numberOfPeriods");
                 txtPortNumber.Text = INI.getINI(Common.sfile, "gameSettings", "port");
@@ -54,7 +55,7 @@ namespace Server
         {
             try
             {
-
+                INI.writeINI(Common.sfile, "gameSettings", "parmaterSetName", txtParmaterSetName.Text);
                 INI.writeINI(Common.sfile, "gameSettings", "numberOfPlayers", txtNumberOfPlayers.Text);
                 INI.writeINI(Common.sfile, "gameSettings", "numberOfPeriods", txtNumberOfPeriods.Text);
                 INI.writeINI(Common.sfile, "gameSettings", "port", txtPortNumber.Text);

@@ -156,7 +156,7 @@ namespace Server
                 Common.summaryDf = File.CreateText(filename);
                 Common.summaryDf.AutoFlush = true;
 
-                string str = "Period,Treatment,Player,Color,Partner,LeftLocation,LeftValue,RightLocation,RightValue,RangeTotal,RangeOverlap,Revenue,TotalCost,Revenue(cents),TotalCost(cents),Earnings(cents),GraphLeftX,GraphLeftY,GraphMiddleX,GraphMiddleY,GraphRightX,GraphRightY,BlueCost,RedCost";
+                string str = "SessionType,Period,Treatment,BlueShare,RedShare,Player,Color,Partner,LeftLocation,LeftValue,RightLocation,RightValue,RangeTotal,RangeOverlap,Revenue,TotalCost,Revenue(cents),TotalCost(cents),Earnings(cents),GraphLeftX,GraphLeftY,GraphMiddleX,GraphMiddleY,GraphRightX,GraphRightY,BlueCost,RedCost";
 
                 Common.summaryDf.WriteLine(str);
 
@@ -166,6 +166,13 @@ namespace Server
 
                 Common.replayDf = File.CreateText(filename);
                 Common.replayDf.AutoFlush = true;
+
+                //earnings datafile
+                filename = "Earnings_Data_" + tempTime + ".csv";
+                filename = Application.StartupPath.ToString() + "\\datafiles\\" + filename;
+
+                Common.earningsDf = File.CreateText(filename);
+                Common.earningsDf.AutoFlush = true;
 
                 //summary table
                 dgMain.RowCount = Common.numberOfPlayers;               
@@ -322,6 +329,7 @@ namespace Server
                 if (Common.summaryDf != null) Common.summaryDf.Close();
                 if (Common.replayDf != null) Common.replayDf.Close();
                 if (Common.recruiterDf != null) Common.recruiterDf.Close();
+                if (Common.earningsDf != null) Common.earningsDf.Close();
 
                 bwTakeSocketConnections.CancelAsync();                
                 listener.Close();

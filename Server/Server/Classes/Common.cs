@@ -35,6 +35,7 @@ namespace Server
         //public static StreamWriter eventsDf;                 //events data file
         public static StreamWriter replayDf;                   //events data file
         public static StreamWriter recruiterDf;                //recruiter earnings upload file
+        public static StreamWriter earningsDf;                //recruiter earnings upload file
 
         //global parameters
         public static int numberOfPlayers;                     //number of players needed
@@ -47,6 +48,7 @@ namespace Server
         public static bool showInstructions;                   //show instructions before experiment starts
         public static bool testMode;                           //turn on auto test system
         public static int checkin=0;                           //global counter for subject actions 
+        public static string parmaterSetName;                  //name given to parameter set
 
         public static int currentPeriod = 0;                   //current period      
         public static int timeRemaining = 0;                   //timer remaing in current period   
@@ -96,6 +98,8 @@ namespace Server
             instructionY = int.Parse(INI.getINI(sfile, "gameSettings", "instructionY"));
             windowX = int.Parse(INI.getINI(sfile, "gameSettings", "windowX"));
             windowY = int.Parse(INI.getINI(sfile, "gameSettings", "windowY"));
+
+            parmaterSetName = INI.getINI(sfile, "gameSettings", "parmaterSetName");
 
             periodLength = int.Parse(INI.getINI(Common.sfile, "gameSettings", "periodLength"));
             locationIncrement = float.Parse(INI.getINI(Common.sfile, "gameSettings", "locationIncrement"));
@@ -204,9 +208,7 @@ namespace Server
                     checkin = 0;
 
                     //summary price data
-
-                    summaryDf.WriteLine(",");
-                    summaryDf.WriteLine("Number,Name,Student ID,Earnings");
+                    earningsDf.WriteLine("Number,Name,Student ID,Earnings");
 
                     for (int i = 1; i <= numberOfPlayers; i++)
                     {
@@ -218,7 +220,7 @@ namespace Server
                         outstr += playerlist[i].studentID + ",";
                         outstr += earnings + ",";
 
-                        summaryDf.WriteLine(outstr);
+                        earningsDf.WriteLine(outstr);
 
                         //recruiter earnings file
                         string outstr2 = playerlist[i].studentID + ",";
@@ -232,6 +234,7 @@ namespace Server
                     summaryDf.Close();                   
                     replayDf.Close();
                     recruiterDf.Close();
+                    earningsDf.Close();
                 }
 
             }

@@ -68,6 +68,8 @@
             this.label18 = new System.Windows.Forms.Label();
             this.txtEarningsMultiplier = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.txtParmaterSetName = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbTestMode
@@ -95,7 +97,7 @@
             // txtWindowX
             // 
             this.txtWindowX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWindowX.Location = new System.Drawing.Point(367, 139);
+            this.txtWindowX.Location = new System.Drawing.Point(364, 170);
             this.txtWindowX.Name = "txtWindowX";
             this.txtWindowX.Size = new System.Drawing.Size(54, 26);
             this.txtWindowX.TabIndex = 36;
@@ -104,7 +106,7 @@
             // txtWindowY
             // 
             this.txtWindowY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWindowY.Location = new System.Drawing.Point(457, 140);
+            this.txtWindowY.Location = new System.Drawing.Point(454, 171);
             this.txtWindowY.Name = "txtWindowY";
             this.txtWindowY.Size = new System.Drawing.Size(54, 26);
             this.txtWindowY.TabIndex = 34;
@@ -113,7 +115,7 @@
             // Label7
             // 
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label7.Location = new System.Drawing.Point(341, 141);
+            this.Label7.Location = new System.Drawing.Point(338, 172);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(24, 23);
             this.Label7.TabIndex = 37;
@@ -123,7 +125,7 @@
             // Label8
             // 
             this.Label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label8.Location = new System.Drawing.Point(432, 142);
+            this.Label8.Location = new System.Drawing.Point(429, 173);
             this.Label8.Name = "Label8";
             this.Label8.Size = new System.Drawing.Size(24, 23);
             this.Label8.TabIndex = 35;
@@ -133,7 +135,7 @@
             // Label9
             // 
             this.Label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label9.Location = new System.Drawing.Point(19, 142);
+            this.Label9.Location = new System.Drawing.Point(16, 173);
             this.Label9.Name = "Label9";
             this.Label9.Size = new System.Drawing.Size(324, 23);
             this.Label9.TabIndex = 33;
@@ -143,7 +145,7 @@
             // txtInstructionX
             // 
             this.txtInstructionX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInstructionX.Location = new System.Drawing.Point(367, 107);
+            this.txtInstructionX.Location = new System.Drawing.Point(364, 138);
             this.txtInstructionX.Name = "txtInstructionX";
             this.txtInstructionX.Size = new System.Drawing.Size(54, 26);
             this.txtInstructionX.TabIndex = 31;
@@ -152,7 +154,7 @@
             // txtInstructionY
             // 
             this.txtInstructionY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInstructionY.Location = new System.Drawing.Point(457, 108);
+            this.txtInstructionY.Location = new System.Drawing.Point(454, 139);
             this.txtInstructionY.Name = "txtInstructionY";
             this.txtInstructionY.Size = new System.Drawing.Size(54, 26);
             this.txtInstructionY.TabIndex = 29;
@@ -161,7 +163,7 @@
             // Label6
             // 
             this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label6.Location = new System.Drawing.Point(341, 109);
+            this.Label6.Location = new System.Drawing.Point(338, 140);
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(24, 23);
             this.Label6.TabIndex = 32;
@@ -171,7 +173,7 @@
             // Label5
             // 
             this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label5.Location = new System.Drawing.Point(432, 110);
+            this.Label5.Location = new System.Drawing.Point(429, 141);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(24, 23);
             this.Label5.TabIndex = 30;
@@ -181,7 +183,7 @@
             // Label4
             // 
             this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label4.Location = new System.Drawing.Point(19, 110);
+            this.Label4.Location = new System.Drawing.Point(16, 141);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(324, 23);
             this.Label4.TabIndex = 28;
@@ -191,7 +193,7 @@
             // txtPortNumber
             // 
             this.txtPortNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPortNumber.Location = new System.Drawing.Point(349, 76);
+            this.txtPortNumber.Location = new System.Drawing.Point(346, 107);
             this.txtPortNumber.Name = "txtPortNumber";
             this.txtPortNumber.Size = new System.Drawing.Size(162, 26);
             this.txtPortNumber.TabIndex = 27;
@@ -200,7 +202,7 @@
             // Label3
             // 
             this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label3.Location = new System.Drawing.Point(19, 78);
+            this.Label3.Location = new System.Drawing.Point(16, 109);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(324, 23);
             this.Label3.TabIndex = 26;
@@ -210,7 +212,7 @@
             // txtNumberOfPeriods
             // 
             this.txtNumberOfPeriods.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumberOfPeriods.Location = new System.Drawing.Point(349, 44);
+            this.txtNumberOfPeriods.Location = new System.Drawing.Point(346, 75);
             this.txtNumberOfPeriods.Name = "txtNumberOfPeriods";
             this.txtNumberOfPeriods.Size = new System.Drawing.Size(162, 26);
             this.txtNumberOfPeriods.TabIndex = 25;
@@ -219,7 +221,7 @@
             // Label2
             // 
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2.Location = new System.Drawing.Point(19, 46);
+            this.Label2.Location = new System.Drawing.Point(16, 77);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(324, 23);
             this.Label2.TabIndex = 24;
@@ -229,7 +231,7 @@
             // txtNumberOfPlayers
             // 
             this.txtNumberOfPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumberOfPlayers.Location = new System.Drawing.Point(349, 12);
+            this.txtNumberOfPlayers.Location = new System.Drawing.Point(346, 43);
             this.txtNumberOfPlayers.Name = "txtNumberOfPlayers";
             this.txtNumberOfPlayers.Size = new System.Drawing.Size(162, 26);
             this.txtNumberOfPlayers.TabIndex = 23;
@@ -238,7 +240,7 @@
             // Label1
             // 
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.Location = new System.Drawing.Point(19, 14);
+            this.Label1.Location = new System.Drawing.Point(16, 45);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(324, 23);
             this.Label1.TabIndex = 22;
@@ -259,7 +261,7 @@
             // txtPeriodLength
             // 
             this.txtPeriodLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPeriodLength.Location = new System.Drawing.Point(349, 172);
+            this.txtPeriodLength.Location = new System.Drawing.Point(346, 203);
             this.txtPeriodLength.Name = "txtPeriodLength";
             this.txtPeriodLength.Size = new System.Drawing.Size(162, 26);
             this.txtPeriodLength.TabIndex = 41;
@@ -268,7 +270,7 @@
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(19, 174);
+            this.label10.Location = new System.Drawing.Point(16, 205);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(324, 23);
             this.label10.TabIndex = 40;
@@ -278,7 +280,7 @@
             // txtLocationIncrement
             // 
             this.txtLocationIncrement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLocationIncrement.Location = new System.Drawing.Point(349, 204);
+            this.txtLocationIncrement.Location = new System.Drawing.Point(346, 235);
             this.txtLocationIncrement.Name = "txtLocationIncrement";
             this.txtLocationIncrement.Size = new System.Drawing.Size(162, 26);
             this.txtLocationIncrement.TabIndex = 49;
@@ -287,7 +289,7 @@
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(19, 206);
+            this.label12.Location = new System.Drawing.Point(16, 237);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(324, 23);
             this.label12.TabIndex = 48;
@@ -432,7 +434,7 @@
             // txtEarningsMultiplier
             // 
             this.txtEarningsMultiplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEarningsMultiplier.Location = new System.Drawing.Point(349, 236);
+            this.txtEarningsMultiplier.Location = new System.Drawing.Point(346, 267);
             this.txtEarningsMultiplier.Name = "txtEarningsMultiplier";
             this.txtEarningsMultiplier.Size = new System.Drawing.Size(162, 26);
             this.txtEarningsMultiplier.TabIndex = 65;
@@ -441,12 +443,31 @@
             // label19
             // 
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(19, 238);
+            this.label19.Location = new System.Drawing.Point(16, 269);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(324, 23);
             this.label19.TabIndex = 64;
             this.label19.Text = "Exchange Rate (points -> ¢)";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtParmaterSetName
+            // 
+            this.txtParmaterSetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtParmaterSetName.Location = new System.Drawing.Point(346, 11);
+            this.txtParmaterSetName.Name = "txtParmaterSetName";
+            this.txtParmaterSetName.Size = new System.Drawing.Size(162, 26);
+            this.txtParmaterSetName.TabIndex = 67;
+            this.txtParmaterSetName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label20
+            // 
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(16, 13);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(324, 23);
+            this.label20.TabIndex = 66;
+            this.label20.Text = "Parameter Set Name";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frmSetup1
             // 
@@ -454,6 +475,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 406);
             this.ControlBox = false;
+            this.Controls.Add(this.txtParmaterSetName);
+            this.Controls.Add(this.label20);
             this.Controls.Add(this.txtEarningsMultiplier);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.txtInstructionPartnerRight2);
@@ -544,5 +567,7 @@
         internal System.Windows.Forms.Label label18;
         internal System.Windows.Forms.TextBox txtEarningsMultiplier;
         internal System.Windows.Forms.Label label19;
+        internal System.Windows.Forms.TextBox txtParmaterSetName;
+        internal System.Windows.Forms.Label label20;
     }
 }

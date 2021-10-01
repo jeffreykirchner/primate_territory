@@ -45,7 +45,7 @@ namespace Client
         public static int currentPeriod;                       //current period
         public static float locationIncrement = 0;             //smallest change in location 
         public static bool showPartnerInfo = true;             //show partner info subject on their screen
-        public static float earningsMultiplier = 1;             //multiple points by this to get us dollars
+        public static float earningsMultiplier = 1;            //multiple points by this to get us dollars
 
         public static int myType;                              //1 or 2 (Red , Blue) 
 
