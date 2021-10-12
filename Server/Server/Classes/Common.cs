@@ -258,6 +258,9 @@ namespace Server
                 playerlist[index].selectionLeft[Common.currentPeriod] = float.Parse(msgtokens[nextToken++]);
                 playerlist[index].selectionRight[Common.currentPeriod] = float.Parse(msgtokens[nextToken++]);
 
+                playerlist[index].valueLeft[Common.currentPeriod] = getLinePointRevenue(playerlist[index].selectionLeft[Common.currentPeriod]).Y;
+                playerlist[index].valueRight[Common.currentPeriod] = getLinePointRevenue(playerlist[index].selectionRight[Common.currentPeriod]).Y;
+
                 if (checkin == numberOfPlayers)
                 {
                     if(Common.currentPeriod == 1)
@@ -336,6 +339,16 @@ namespace Server
                     string str2 = "";
 
                     //start next treatment
+                    if (Common.currentPeriod > 1 &&
+                        Common.periods[currentPeriod].treatment != Common.periods[currentPeriod - 1].treatment)
+                    {
+                        for (int i = 1; i <= numberOfPlayers; i++)
+                        {
+                            FrmServer.dgMain[2, i - 1].Value = "New Treatment";
+                        }
+                    }
+
+                    //start next period
                     for (int i = 1; i <= numberOfPlayers; i++)
                     {
                         playerlist[i].sendStartNextPeriod(str2);
@@ -490,57 +503,6 @@ namespace Server
             {
                 EventLog.appEventLog_Write("error :", ex);
             }
-        }
-
-        public static void startNextPeriod()
-        {
-            try
-            {
-                //record summary data
-                for (int i = 1; i <= numberOfPlayers; i++)
-                {
-                    playerlist[i].writeSummaryData();
-                }
-
-                //update displayed earnings
-                if (Common.replayDf != null)  //replay
-                { 
-                    for (int i = 1; i <= numberOfPlayers; i++)
-                    {
-                        Common.FrmServer.dgMain[3, i - 1].Value = String.Format(culture, "{0:C}", playerlist[i].earnings / 100);
-                    }
-                }
-
-                if (currentPeriod == numberOfPeriods)
-                {
-
-                    //end game
-                    for (int i = 1; i <= numberOfPlayers; i++)
-                    {
-                        playerlist[i].sendShowName();
-                    }
-                }
-                else
-                {
-                    if (!Common.showInstructions) currentPeriod += 1;
-                    timeRemaining = periodLength;
-
-                    for (int i = 1; i <= numberOfPlayers; i++)
-                    {
-                        playerlist[i].sendStartNextPeriod("");
-                    }                    
-                }
-                
-            }
-            catch (Exception ex)
-            {
-                EventLog.appEventLog_Write("error :", ex);
-            }
-        }
-
-        public static int returnDistance(int x1, int y1, int x2, int y2)
-        {
-            return Convert.ToInt32(Math.Round(Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2))));
         }
 
         public static string timeConversion(int sec)
