@@ -269,6 +269,11 @@ namespace Server
                     checkin = 0;
                     showInstructions = false;
 
+                    for (int i = 1; i <= numberOfPlayers; i++)
+                    {
+                        FrmServer.dgMain[2, i - 1].Value = "Playing";
+                    }
+
                     handleSelection();                    
                 }
             }

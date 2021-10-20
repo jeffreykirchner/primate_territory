@@ -429,6 +429,17 @@ namespace Server
 
                 Treatment t = Common.periods[Common.selectedPeriod].treatment;
 
+                float sharedRevenuePercent = 0;
+
+                if (myType == 1)
+                {
+                    sharedRevenuePercent = t.blueRevenuePercent;
+                }
+                else
+                {
+                    sharedRevenuePercent = t.redRevenuePercent;
+                }
+
                 PointF myPt1 = new PointF(Common.FrmServer.convertToX(mySLeft,t.scaleRange), 0);      //left side location
                 PointF myPt2 = new PointF(Common.FrmServer.convertToX(mySRight, t.scaleRange), 0);     //right side location
 
@@ -449,9 +460,9 @@ namespace Server
                     //fully within other player
                     gp1 = getFillPath(myPt1,
                                         myPt2,
-                                        new PointF(myPt3.X, myPt3.Y / 2),
-                                        new PointF(myPt4.X, myPt4.Y / 2),
-                                        new PointF(t.pt3.X, t.pt3.Y / 2),
+                                        new PointF(myPt3.X, myPt3.Y * sharedRevenuePercent),
+                                        new PointF(myPt4.X, myPt4.Y * sharedRevenuePercent),
+                                        new PointF(t.pt3.X, t.pt3.Y * sharedRevenuePercent),
                                         mySLeft, mySRight);
                     g.FillPath(Brushes.LightYellow, gp1);
                 }
@@ -475,9 +486,9 @@ namespace Server
                         //left edge over lap
                         gp1 = getFillPath(myPt1,
                                           otherPt2,
-                                          new PointF(myPt3.X, myPt3.Y / 2),
-                                          new PointF(otherPt4.X, otherPt4.Y / 2),
-                                          new PointF(t.pt3.X, t.pt3.Y / 2),
+                                          new PointF(myPt3.X, myPt3.Y * sharedRevenuePercent),
+                                          new PointF(otherPt4.X, otherPt4.Y * sharedRevenuePercent),
+                                          new PointF(t.pt3.X, t.pt3.Y * sharedRevenuePercent),
                                           mySLeft, otherSRight);
                         g.FillPath(Brushes.LightYellow, gp1);
                     }
@@ -495,9 +506,9 @@ namespace Server
                         //right edge over lap
                         gp1 = getFillPath(otherPt1,
                                           myPt2,
-                                          new PointF(otherPt3.X, otherPt3.Y / 2),
-                                          new PointF(myPt4.X, myPt4.Y / 2),
-                                          new PointF(t.pt3.X, t.pt3.Y / 2),
+                                          new PointF(otherPt3.X, otherPt3.Y * sharedRevenuePercent),
+                                          new PointF(myPt4.X, myPt4.Y * sharedRevenuePercent),
+                                          new PointF(t.pt3.X, t.pt3.Y * sharedRevenuePercent),
                                           otherSLeft, mySRight);
                         g.FillPath(Brushes.LightYellow, gp1);
                     }
@@ -508,9 +519,9 @@ namespace Server
                         //fully within other player
                         gp1 = getFillPath(otherPt1,
                                             otherPt2,
-                                            new PointF(otherPt3.X, otherPt3.Y / 2),
-                                            new PointF(otherPt4.X, otherPt4.Y / 2),
-                                            new PointF(t.pt3.X, t.pt3.Y / 2),
+                                            new PointF(otherPt3.X, otherPt3.Y * sharedRevenuePercent),
+                                            new PointF(otherPt4.X, otherPt4.Y * sharedRevenuePercent),
+                                            new PointF(t.pt3.X, t.pt3.Y * sharedRevenuePercent),
                                             otherSLeft, otherSRight);
                         g.FillPath(Brushes.LightYellow, gp1);
                     }

@@ -265,7 +265,6 @@ namespace Client
                     otherPlayer = Common.playerlist[1];
                     sharedRevenuePercent = t.redRevenuePercent;
                 }
-
                 
                 PointF myPt1 = new PointF(Common.Frm1.convertToX(selectionLeft, t.scaleRange), 0);      //left side location
                 PointF myPt2 = new PointF(Common.Frm1.convertToX(selectionRight, t.scaleRange), 0);     //right side location
