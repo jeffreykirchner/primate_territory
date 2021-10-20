@@ -1008,6 +1008,7 @@ namespace Client
 
                 str = p.selectionLeft.ToString() + ";";
                 str += p.selectionRight.ToString() + ";";
+                str +=  Common.convertToPoints(p.currentMaxRevenueCents).ToString() + ";";
 
                 Common.FrmClient.SC.sendMessage("02", str);
             }

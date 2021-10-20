@@ -24,14 +24,14 @@ namespace Client
         public RectangleF leftHandle;
         public RectangleF rightHandle;
 
-        public float currentMaxProfitCents = 0;            //max possible profit given current selection
-        public float currentProfit = 0;               //realized profit from last period
-        public float currentMinProfitCents = 0;            //min posssible profit given current selection
+        public float currentMaxProfitCents = 0;           //max possible profit given current selection
+        public float currentProfit = 0;                   //realized profit from last period
+        public float currentMinProfitCents = 0;           //min posssible profit given current selection
 
-        public float currentMaxRevenueCents = 0;           //max possible revenue given selection
-        public float currentRevenue = 0;              //realized revenue from last period given other player's selection 
-        public float currentRevenueCents = 0;         //realized revenue from last period given other player's selection in cents 
-        public float currentMinRevenueCents = 0;           //min possible revenue given selection
+        public float currentMaxRevenueCents = 0;          //max possible revenue given selection
+        public float currentRevenue = 0;                  //realized revenue from last period given other player's selection 
+        public float currentRevenueCents = 0;             //realized revenue from last period given other player's selection in cents 
+        public float currentMinRevenueCents = 0;          //min possible revenue given selection
 
         public float currentSelectionCostCents = 0;        //cost set locally
         public float currentCost = 0;                 //cost from last period 
@@ -172,7 +172,7 @@ namespace Client
 
                 Treatment t = Common.periods[Common.currentPeriod].treatment;
 
-                costPercent = currentSelectionCostCents/ currentMaxRevenueCents;
+                costPercent = currentSelectionCostCents / currentMaxRevenueCents;
                 
                 GraphicsPath gp = new GraphicsPath();
 

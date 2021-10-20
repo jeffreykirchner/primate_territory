@@ -620,5 +620,18 @@ namespace Client
             }
         }
 
+        public static double convertToPoints(double value)
+        {
+            try
+            {
+                return value / Common.earningsMultiplier;
+            }
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+                return 0;
+            }
+        }
+
     }
 }

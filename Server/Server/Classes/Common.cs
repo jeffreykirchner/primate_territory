@@ -291,10 +291,13 @@ namespace Server
 
                 playerlist[index].selectionLeft[Common.currentPeriod] = float.Parse(msgtokens[nextToken++]);
                 playerlist[index].selectionRight[Common.currentPeriod] = float.Parse(msgtokens[nextToken++]);
+                playerlist[index].maxRevenue[Common.currentPeriod] = float.Parse(msgtokens[nextToken++]);
 
                 //set values
                 playerlist[index].valueLeft[Common.currentPeriod] = getLinePointRevenue(playerlist[index].selectionLeft[Common.currentPeriod]).Y;
                 playerlist[index].valueRight[Common.currentPeriod] = getLinePointRevenue(playerlist[index].selectionRight[Common.currentPeriod]).Y;
+
+
 
                 if (checkin == numberOfPlayers)
                 {
@@ -323,6 +326,7 @@ namespace Server
                         playerlist[i].writeSummaryData();
                         playerlist[i].sendShowName();
                     }
+
                     selectedPeriod = currentPeriod;
                 }
                 else

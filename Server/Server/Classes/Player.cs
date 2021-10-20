@@ -35,6 +35,8 @@ namespace Server
         public float[] range = new float[10000];
         public float[] rangeOverlap = new float[10000];
 
+        public float[] maxRevenue = new float[10000];
+
         //drawing
 
         public System.Drawing.Color color;
@@ -657,7 +659,7 @@ namespace Server
 
                 Treatment t = Common.periods[Common.selectedPeriod].treatment;
 
-                float percent = cost[Common.selectedPeriod] / revenue[Common.selectedPeriod];
+                float percent = cost[Common.selectedPeriod] / maxRevenue[Common.selectedPeriod];
 
                 GraphicsPath gp = new GraphicsPath();
 
@@ -726,6 +728,7 @@ namespace Server
 
                     period.Add(new JProperty("Left Location", selectionLeft[i]));
                     period.Add(new JProperty("Left Value", valueLeft[i]));
+                    period.Add(new JProperty("Max Revenue", maxRevenue[i]));
 
                     period.Add(new JProperty("Right Location", selectionRight[i]));
                     period.Add(new JProperty("Right Value", valueRight[i]));
@@ -773,6 +776,11 @@ namespace Server
 
                     selectionLeft[i] = (float)period["Left Location"];
                     valueLeft[i] = (float)period["Left Value"];
+
+                    if (period["Max Revenue"] != null)
+                        maxRevenue[i] = (float)period["Max Revenue"];
+                    else
+                        maxRevenue[i] = 100;                   
 
                     selectionRight[i] = (float)period["Right Location"];
                     valueRight[i] = (float)period["Right Value"];

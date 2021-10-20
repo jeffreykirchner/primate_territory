@@ -124,6 +124,7 @@ namespace Server
 
                 Common.loadParameters();
                 Common.closing = false;
+                Common.selectedPeriod = 1;
 
                 //if the number of connections does not match the parameters then exit
                 if (Common.numberOfPlayers != Common.clientCount)
@@ -878,10 +879,10 @@ namespace Server
             try
             {
                 g.DrawString("Total Revenue(¢):", f18, brush, new PointF(0, 0), fmtR);
-                g.DrawString(string.Format("{0:0.00}", Math.Round(p.revenue[Common.selectedPeriod], 2)), f18, brush, new PointF(0, 0), fmtL);
+                g.DrawString(string.Format("{0:0.00}", Common.convertToCents(p.revenue[Common.selectedPeriod])), f18, brush, new PointF(0, 0), fmtL);
 
                 g.DrawString("- Total Cost(¢):", f18, brush, new PointF(0, 25), fmtR);
-                g.DrawString(string.Format("{0:0.00}", Math.Round(p.cost[Common.selectedPeriod], 2)), f18, brush, new PointF(0, 25), fmtL);
+                g.DrawString(string.Format("{0:0.00}", Common.convertToCents(p.cost[Common.selectedPeriod])), f18, brush, new PointF(0, 25), fmtL);
 
                 //equals line 
                 g.DrawString("P" + p.inumber + " Profit(¢):", f18, brush, new PointF(0, 60), fmtR);
@@ -1269,8 +1270,7 @@ namespace Server
         private void cboPlayer_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
-            {
-               
+            {               
                 Common.selectedPlayer = cboPlayer.SelectedIndex + 1;
                 refreshScreen();
             }
