@@ -1233,5 +1233,21 @@ namespace Client
             }
         }
 
+        private void txtChat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtChat.Text == "Type here to chat ...")
+                {
+                    txtChat.Text = "";
+                }
+            
+            }
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+            }
+        }
+
     }
 }

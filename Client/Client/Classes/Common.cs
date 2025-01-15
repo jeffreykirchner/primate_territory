@@ -46,6 +46,7 @@ namespace Client
         public static float locationIncrement = 0;             //smallest change in location 
         public static bool showPartnerInfo = true;             //show partner info subject on their screen
         public static float earningsMultiplier = 1;            //multiple points by this to get us dollars
+        public static bool enableChat = false;                 //enable chat feature
 
         public static int myType;                              //1 or 2 (Red , Blue) 
 
@@ -189,13 +190,14 @@ namespace Client
                 showInstructions = bool.Parse(msgtokens[nextToken++]);
                 inumber = int.Parse(msgtokens[nextToken++]);
                 testMode = bool.Parse(msgtokens[nextToken++]);      
-                
+
                 periodLength = int.Parse(msgtokens[nextToken++]);
 
                 myType = int.Parse(msgtokens[nextToken++]);
                 locationIncrement = float.Parse(msgtokens[nextToken++]);
                 earningsMultiplier = float.Parse(msgtokens[nextToken++]);
                 showPartnerInfo = bool.Parse(msgtokens[nextToken++]);
+                enableChat = bool.Parse(msgtokens[nextToken++]);
 
                 instructionPlayerLeft = float.Parse(msgtokens[nextToken++]);
                 instructionPlayerRight = float.Parse(msgtokens[nextToken++]);
@@ -254,7 +256,16 @@ namespace Client
 
                     FrmTestMode = new frmTestMode();
                     FrmTestMode.Show();
-                }                               
+                }        
+                
+                if(enableChat)
+                {
+                    
+                }
+                else
+                {
+                    Frm1.Width = 1225;
+                }
 
                 Frm1.timer1.Enabled = true;
 

@@ -70,6 +70,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.txtParmaterSetName = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.cbEnableChat = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // cbTestMode
@@ -469,12 +470,24 @@
             this.label20.Text = "Parameter Set Name";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // cbEnableChat
+            // 
+            this.cbEnableChat.AutoSize = true;
+            this.cbEnableChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEnableChat.Location = new System.Drawing.Point(108, 312);
+            this.cbEnableChat.Name = "cbEnableChat";
+            this.cbEnableChat.Size = new System.Drawing.Size(127, 24);
+            this.cbEnableChat.TabIndex = 68;
+            this.cbEnableChat.Text = "Enable Chat";
+            this.cbEnableChat.UseVisualStyleBackColor = true;
+            // 
             // frmSetup1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 406);
             this.ControlBox = false;
+            this.Controls.Add(this.cbEnableChat);
             this.Controls.Add(this.txtParmaterSetName);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.txtEarningsMultiplier);
@@ -569,5 +582,6 @@
         internal System.Windows.Forms.Label label19;
         internal System.Windows.Forms.TextBox txtParmaterSetName;
         internal System.Windows.Forms.Label label20;
+        internal System.Windows.Forms.CheckBox cbEnableChat;
     }
 }

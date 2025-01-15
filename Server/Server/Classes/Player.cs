@@ -110,6 +110,7 @@ namespace Server
                 outstr += Common.locationIncrement + ";";
                 outstr += Common.earningsMultiplier + ";";
                 outstr += Common.showPartnerInfo + ";";
+                outstr += Common.enableChat + ";";
 
                 outstr += Common.instructionPlayerLeft + ";";
                 outstr += Common.instructionPlayerRight + ";";

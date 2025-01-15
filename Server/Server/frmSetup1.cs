@@ -34,6 +34,7 @@ namespace Server
                 txtLocationIncrement.Text = INI.getINI(Common.sfile, "gameSettings", "locationIncrement");
                 txtEarningsMultiplier.Text = INI.getINI(Common.sfile, "gameSettings", "earningsMultiplier");
 
+                cbEnableChat.Checked = bool.Parse(INI.getINI(Common.sfile, "gameSettings", "enableChat"));
                 cbShowPartnerInfo.Checked = bool.Parse(INI.getINI(Common.sfile, "gameSettings", "showPartnerInfo"));
                 cbShowInstructions.Checked =bool.Parse(INI.getINI(Common.sfile, "gameSettings", "showInstructions"));
                 cbTestMode.Checked = bool.Parse(INI.getINI(Common.sfile, "gameSettings", "testMode"));
@@ -68,6 +69,7 @@ namespace Server
                 INI.writeINI(Common.sfile, "gameSettings", "locationIncrement", txtLocationIncrement.Text);
                 INI.writeINI(Common.sfile, "gameSettings", "earningsMultiplier", txtEarningsMultiplier.Text);
 
+                INI.writeINI(Common.sfile, "gameSettings", "enableChat", cbEnableChat.Checked.ToString());
                 INI.writeINI(Common.sfile, "gameSettings", "showPartnerInfo", cbShowPartnerInfo.Checked.ToString());
                 INI.writeINI(Common.sfile, "gameSettings", "showInstructions", cbShowInstructions.Checked.ToString());
                 INI.writeINI(Common.sfile, "gameSettings", "testMode", cbTestMode.Checked.ToString());

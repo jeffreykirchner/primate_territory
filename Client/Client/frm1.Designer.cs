@@ -37,6 +37,11 @@
             this.cmdSubmit = new System.Windows.Forms.Button();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.gbChat = new System.Windows.Forms.GroupBox();
+            this.rtbChat = new System.Windows.Forms.RichTextBox();
+            this.txtChat = new System.Windows.Forms.TextBox();
+            this.cmdChat = new System.Windows.Forms.Button();
+            this.gbChat.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -96,12 +101,59 @@
             // 
             this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
             // 
+            // gbChat
+            // 
+            this.gbChat.Controls.Add(this.rtbChat);
+            this.gbChat.Controls.Add(this.txtChat);
+            this.gbChat.Controls.Add(this.cmdChat);
+            this.gbChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbChat.Location = new System.Drawing.Point(1204, 9);
+            this.gbChat.Name = "gbChat";
+            this.gbChat.Size = new System.Drawing.Size(306, 814);
+            this.gbChat.TabIndex = 42;
+            this.gbChat.TabStop = false;
+            this.gbChat.Text = "Chat";
+            // 
+            // rtbChat
+            // 
+            this.rtbChat.Location = new System.Drawing.Point(6, 21);
+            this.rtbChat.Name = "rtbChat";
+            this.rtbChat.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.rtbChat.Size = new System.Drawing.Size(294, 745);
+            this.rtbChat.TabIndex = 44;
+            this.rtbChat.Text = "";
+            // 
+            // txtChat
+            // 
+            this.txtChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChat.Location = new System.Drawing.Point(6, 776);
+            this.txtChat.Name = "txtChat";
+            this.txtChat.Size = new System.Drawing.Size(250, 26);
+            this.txtChat.TabIndex = 43;
+            this.txtChat.Text = "Type here to chat ...";
+            this.txtChat.Click += new System.EventHandler(this.txtChat_Click);
+            // 
+            // cmdChat
+            // 
+            this.cmdChat.AutoSize = true;
+            this.cmdChat.BackColor = System.Drawing.SystemColors.Control;
+            this.cmdChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdChat.Image = ((System.Drawing.Image)(resources.GetObject("cmdChat.Image")));
+            this.cmdChat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cmdChat.Location = new System.Drawing.Point(262, 772);
+            this.cmdChat.Name = "cmdChat";
+            this.cmdChat.Size = new System.Drawing.Size(38, 34);
+            this.cmdChat.TabIndex = 42;
+            this.cmdChat.TabStop = false;
+            this.cmdChat.UseVisualStyleBackColor = false;
+            // 
             // frm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1210, 831);
+            this.ClientSize = new System.Drawing.Size(1522, 831);
             this.ControlBox = false;
+            this.Controls.Add(this.gbChat);
             this.Controls.Add(this.cmdSubmit);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.txtMessages);
@@ -113,6 +165,8 @@
             this.Load += new System.EventHandler(this.frm1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm1_KeyDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frm1_MouseMove);
+            this.gbChat.ResumeLayout(false);
+            this.gbChat.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,5 +180,9 @@
         public System.Windows.Forms.Timer timer3;
         public System.Windows.Forms.Timer timer4;
         public System.Windows.Forms.Button cmdSubmit;
+        private System.Windows.Forms.GroupBox gbChat;
+        public System.Windows.Forms.Button cmdChat;
+        private System.Windows.Forms.TextBox txtChat;
+        private System.Windows.Forms.RichTextBox rtbChat;
     }
 }
