@@ -163,7 +163,7 @@ namespace Server
                         takeCalculationRequest(index, message);
                         break;
                     case "04":
-                        
+                        takeChat(index, message);
                         break;
                     case "05":
                         
@@ -278,6 +278,31 @@ namespace Server
 
                     handleSelection();                    
                 }
+            }
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+            }
+        }
+
+        static void takeChat(int index, string str)
+        {
+            try
+            {
+                string[] msgtokens = str.Split(';');
+
+                int nextToken = 0;
+                string message = msgtokens[nextToken++];
+
+                string outstr = "";
+
+                outstr += index + ";";
+                outstr += message + ";";
+
+                playerlist[index].sendChat(outstr);
+                playerlist[playerlist[index].partner].sendChat(outstr);
+
+
             }
             catch (Exception ex)
             {

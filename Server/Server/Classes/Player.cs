@@ -280,6 +280,20 @@ namespace Server
             }
         }
 
+        public void sendChat(string str)
+        {
+            try
+            {
+                if (Common.replayDf == null) return;   //replay, do not record data              
+                string outstr = str;
+                sendMessage("02", outstr);
+            }
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+            }
+        }
+
         public void writeSummaryData()
         {
             try

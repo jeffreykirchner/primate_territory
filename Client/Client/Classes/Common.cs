@@ -132,7 +132,7 @@ namespace Client
                         takeCalculationRequest(message);
                         break;
                     case "02":
-                        
+                        takeChat(message);
                         break;
                     case "03":
                         
@@ -350,6 +350,35 @@ namespace Client
 
                 Common.Frm1.refreshScreen();
 
+            }
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+            }
+        }
+
+        public static void takeChat(string str)
+        {
+            try
+            {
+                string[] msgtokens = str.Split(';');
+                int nextToken = 0;
+
+                string tempId = msgtokens[nextToken++];
+                string tempMessage = msgtokens[nextToken++];
+
+                string sid = "";
+
+                if(tempId == inumber.ToString())
+                {
+                    sid = "Me";
+                }
+                else
+                {
+                    sid = "Other";
+                }
+
+                Frm1.rtbChat.Text =  Frm1.rtbChat.Text + "(" + sid + ") " + tempMessage + "\r\n";
             }
             catch (Exception ex)
             {

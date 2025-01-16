@@ -116,6 +116,7 @@
             // 
             // rtbChat
             // 
+            this.rtbChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbChat.Location = new System.Drawing.Point(6, 21);
             this.rtbChat.Name = "rtbChat";
             this.rtbChat.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
@@ -130,8 +131,10 @@
             this.txtChat.Name = "txtChat";
             this.txtChat.Size = new System.Drawing.Size(250, 26);
             this.txtChat.TabIndex = 43;
+            this.txtChat.TabStop = false;
             this.txtChat.Text = "Type here to chat ...";
             this.txtChat.Click += new System.EventHandler(this.txtChat_Click);
+            this.txtChat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtChat_KeyDown);
             // 
             // cmdChat
             // 
@@ -146,6 +149,7 @@
             this.cmdChat.TabIndex = 42;
             this.cmdChat.TabStop = false;
             this.cmdChat.UseVisualStyleBackColor = false;
+            this.cmdChat.Click += new System.EventHandler(this.cmdChat_Click);
             // 
             // frm1
             // 
@@ -183,6 +187,6 @@
         private System.Windows.Forms.GroupBox gbChat;
         public System.Windows.Forms.Button cmdChat;
         private System.Windows.Forms.TextBox txtChat;
-        private System.Windows.Forms.RichTextBox rtbChat;
+        public System.Windows.Forms.RichTextBox rtbChat;
     }
 }

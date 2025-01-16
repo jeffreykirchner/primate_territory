@@ -1249,5 +1249,36 @@ namespace Client
             }
         }
 
+        private void cmdChat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtChat.Text == "Type here to chat ...") return;
+                if (txtChat.Text == "") return;
+                Common.FrmClient.SC.sendMessage("04", txtChat.Text);
+                txtChat.Text = "";
+            }
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+            }
+        }
+
+        private void txtChat_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                //if enter is pressed send chat
+                if (e.KeyCode == Keys.Enter)
+                {
+                    cmdChat.PerformClick();
+                }
+            }
+            
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+            }
+        }
     }
 }
