@@ -116,20 +116,22 @@
             // 
             // rtbChat
             // 
-            this.rtbChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbChat.BackColor = System.Drawing.Color.White;
+            this.rtbChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbChat.Location = new System.Drawing.Point(6, 21);
             this.rtbChat.Name = "rtbChat";
+            this.rtbChat.ReadOnly = true;
             this.rtbChat.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.rtbChat.Size = new System.Drawing.Size(294, 745);
             this.rtbChat.TabIndex = 44;
-            this.rtbChat.Text = "";
+            this.rtbChat.Text = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
             // 
             // txtChat
             // 
-            this.txtChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChat.Location = new System.Drawing.Point(6, 776);
             this.txtChat.Name = "txtChat";
-            this.txtChat.Size = new System.Drawing.Size(250, 26);
+            this.txtChat.Size = new System.Drawing.Size(250, 24);
             this.txtChat.TabIndex = 43;
             this.txtChat.TabStop = false;
             this.txtChat.Text = "Type here to chat ...";

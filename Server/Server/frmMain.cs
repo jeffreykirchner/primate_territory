@@ -175,6 +175,16 @@ namespace Server
                 Common.earningsDf = File.CreateText(filename);
                 Common.earningsDf.AutoFlush = true;
 
+                //chat data file
+                filename = "Chat_Data_" + tempTime + ".csv";
+                filename = Application.StartupPath.ToString() + "\\datafiles\\" + filename;
+
+                Common.chatDf = File.CreateText(filename);
+                Common.chatDf.AutoFlush = true;
+
+                str = "Period,Player,Partner,Message";
+                Common.chatDf.WriteLine(str);
+
                 //summary table
                 dgMain.RowCount = Common.numberOfPlayers;               
 
@@ -331,6 +341,7 @@ namespace Server
                 if (Common.replayDf != null) Common.replayDf.Close();
                 if (Common.recruiterDf != null) Common.recruiterDf.Close();
                 if (Common.earningsDf != null) Common.earningsDf.Close();
+                if (Common.chatDf != null) Common.chatDf.Close();
 
                 bwTakeSocketConnections.CancelAsync();                
                 listener.Close();

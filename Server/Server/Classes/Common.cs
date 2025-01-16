@@ -35,7 +35,8 @@ namespace Server
         //public static StreamWriter eventsDf;                 //events data file
         public static StreamWriter replayDf;                   //events data file
         public static StreamWriter recruiterDf;                //recruiter earnings upload file
-        public static StreamWriter earningsDf;                //recruiter earnings upload file
+        public static StreamWriter earningsDf;                 //recruiter earnings upload file
+        public static StreamWriter chatDf;                     //chat data file
 
         //global parameters
         public static int numberOfPlayers;                     //number of players needed
@@ -237,6 +238,7 @@ namespace Server
                     replayDf.Close();
                     recruiterDf.Close();
                     earningsDf.Close();
+                    chatDf.Close();
                 }
 
             }
@@ -300,8 +302,18 @@ namespace Server
                 outstr += message + ";";
 
                 playerlist[index].sendChat(outstr);
-                playerlist[playerlist[index].partner].sendChat(outstr);
 
+                if (!showInstructions)
+                {
+                    playerlist[playerlist[index].partner].sendChat(outstr);
+                }
+
+                string dataStr = "";
+                dataStr = currentPeriod + ",";
+                dataStr += index + ",";
+                dataStr += playerlist[index].partner + ",";
+                dataStr += '"' + message +'"';
+                chatDf.WriteLine(dataStr);
 
             }
             catch (Exception ex)

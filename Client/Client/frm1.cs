@@ -174,6 +174,7 @@ namespace Client
                     Player p = Common.playerlist[Common.myType];
 
                     if (Common.phase == "begin" && cmdSubmit.Visible == false) return;
+                    if (txtChat.Focused) return;
 
                     if (Convert.ToInt32(e.KeyValue) == Convert.ToInt32(Keys.A))
                     {
@@ -898,6 +899,8 @@ namespace Client
 
                 if (Common.phase == "begin" && cmdSubmit.Visible == false) return;
 
+                this.ActiveControl = null;
+
                 Player p = Common.playerlist[Common.myType];
                 if (p.isOverLeft(e.Location))
                 {
@@ -1275,6 +1278,108 @@ namespace Client
                 }
             }
             
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+            }
+        }
+
+        bool RepRTBfield(string sField, string sValue)
+        {
+            try
+            {
+                //when the instructions are loaded into the rich text box control this function will
+                //replace the variable place holders with variables.
+
+                if (rtbChat.Find("#" + sField + "#") == -1)
+                {
+                    rtbChat.DeselectAll();
+                    return false;
+                }
+
+                rtbChat.SelectedText = sValue;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+                return false;
+            }
+        }
+
+        void RepRTBfield2(string sField, string sValue)
+        {
+            try
+            {
+
+                while ((RepRTBfield(sField, sValue)))
+                {
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+            }
+        }
+
+        int RepRTBfieldColor(string sField, Color c, int start)
+        {
+            try
+            {
+                //when the instructions are loaded into the rich text box control this function will
+                //color the specified text the specified color
+
+                if (rtbChat.Find(sField, start, RichTextBoxFinds.None) == -1)
+                {
+                    rtbChat.DeselectAll();
+                    return -1;
+                }
+
+                rtbChat.SelectionColor = c;
+
+                return rtbChat.SelectionStart;
+            }
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+                return -1;
+            }
+        }
+
+        public void RepRTBfield2Color(string sField, Color c)
+        {
+
+            try
+            {
+                int start = (RepRTBfieldColor(sField, c, 0));
+
+                bool go = false;
+
+                if (start == -1)
+                {
+                    go = false;
+                }
+                else
+                {
+                    go = true;
+                    start += 1;
+                }
+
+                while (go)
+                {
+                    start = (RepRTBfieldColor(sField, c, start));
+
+                    if (start == -1)
+                    {
+                        go = false;
+                    }
+                    else
+                    {
+                        start += 1;
+                    }
+                }
+            }
             catch (Exception ex)
             {
                 EventLog.appEventLog_Write("error :", ex);

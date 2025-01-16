@@ -361,24 +361,59 @@ namespace Client
         {
             try
             {
+                Player p = Common.playerlist[Common.myType];
+
                 string[] msgtokens = str.Split(';');
                 int nextToken = 0;
 
                 string tempId = msgtokens[nextToken++];
                 string tempMessage = msgtokens[nextToken++];
 
-                string sid = "";
+                string newText = "";
 
-                if(tempId == inumber.ToString())
+                int start_search = Frm1.rtbChat.Text.Length;
+
+                //add text
+                if (tempId == inumber.ToString())
                 {
-                    sid = "Me";
+                    newText = tempMessage + "\r\n";
                 }
                 else
                 {
-                    sid = "Other";
+                    newText = "(Other) " + tempMessage + "\r\n";
                 }
 
-                Frm1.rtbChat.Text =  Frm1.rtbChat.Text + "(" + sid + ") " + tempMessage + "\r\n";
+                Frm1.rtbChat.AppendText(newText);
+
+                //mark up text
+                if (tempId == inumber.ToString())
+                {
+                    if (Frm1.rtbChat.Find(tempMessage, start_search, RichTextBoxFinds.None) != -1)
+                    {
+                        Frm1.rtbChat.SelectionAlignment = HorizontalAlignment.Right;
+                    }
+                }
+                else
+                {
+                    if (Frm1.rtbChat.Find("(Other)", start_search, RichTextBoxFinds.None) != -1)
+                    {
+
+                        if (p.myID == 1)
+                        { 
+                            Frm1.rtbChat.SelectionColor = Frm1.p2Color;
+                        }
+                        else
+                        {
+                            Frm1.rtbChat.SelectionColor = Frm1.p1Color;
+                        }
+                    }
+                    
+                }
+
+                Frm1.rtbChat.SelectionStart = Frm1.Text.Length;
+                Frm1.rtbChat.ScrollToCaret();
+
+                Frm1.rtbChat.DeselectAll();
             }
             catch (Exception ex)
             {
@@ -601,36 +636,6 @@ namespace Client
                 EventLog.appEventLog_Write("error :", ex);
             }
         }
-
-        //public static void calcRevenue()
-        //{
-        //    try
-        //    {
-        //        if (Common.myType != 1 && Common.myType != 2) return;
-        //        Player p = Common.playerlist[Common.myType];
-
-        //        p.calcRevenue();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        EventLog.appEventLog_Write("error :", ex);
-        //    }
-        //}
-
-        //public static void calcCost()
-        //{
-        //    try
-        //    {
-        //        if (Common.myType != 1 && Common.myType != 2) return;
-        //        Player p = Common.playerlist[Common.myType];
-
-        //        p.calcCost();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        EventLog.appEventLog_Write("error :", ex);
-        //    }
-        //}
 
         public static void calcSelectionProfit()
         {
