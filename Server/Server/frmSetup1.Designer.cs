@@ -71,13 +71,15 @@
             this.txtParmaterSetName = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.cbEnableChat = new System.Windows.Forms.CheckBox();
+            this.txtInstructionsFolder = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbTestMode
             // 
             this.cbTestMode.AutoSize = true;
             this.cbTestMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTestMode.Location = new System.Drawing.Point(108, 342);
+            this.cbTestMode.Location = new System.Drawing.Point(108, 387);
             this.cbTestMode.Name = "cbTestMode";
             this.cbTestMode.Size = new System.Drawing.Size(112, 24);
             this.cbTestMode.TabIndex = 39;
@@ -88,7 +90,7 @@
             // 
             this.cbShowInstructions.AutoSize = true;
             this.cbShowInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbShowInstructions.Location = new System.Drawing.Point(335, 342);
+            this.cbShowInstructions.Location = new System.Drawing.Point(335, 387);
             this.cbShowInstructions.Name = "cbShowInstructions";
             this.cbShowInstructions.Size = new System.Drawing.Size(172, 24);
             this.cbShowInstructions.TabIndex = 38;
@@ -251,7 +253,7 @@
             // cmdSaveAndClose
             // 
             this.cmdSaveAndClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdSaveAndClose.Location = new System.Drawing.Point(594, 335);
+            this.cmdSaveAndClose.Location = new System.Drawing.Point(603, 391);
             this.cmdSaveAndClose.Name = "cmdSaveAndClose";
             this.cmdSaveAndClose.Size = new System.Drawing.Size(276, 31);
             this.cmdSaveAndClose.TabIndex = 21;
@@ -301,7 +303,7 @@
             // 
             this.cbShowPartnerInfo.AutoSize = true;
             this.cbShowPartnerInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbShowPartnerInfo.Location = new System.Drawing.Point(335, 312);
+            this.cbShowPartnerInfo.Location = new System.Drawing.Point(335, 357);
             this.cbShowPartnerInfo.Name = "cbShowPartnerInfo";
             this.cbShowPartnerInfo.Size = new System.Drawing.Size(173, 24);
             this.cbShowPartnerInfo.TabIndex = 50;
@@ -474,19 +476,40 @@
             // 
             this.cbEnableChat.AutoSize = true;
             this.cbEnableChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEnableChat.Location = new System.Drawing.Point(108, 312);
+            this.cbEnableChat.Location = new System.Drawing.Point(108, 357);
             this.cbEnableChat.Name = "cbEnableChat";
             this.cbEnableChat.Size = new System.Drawing.Size(127, 24);
             this.cbEnableChat.TabIndex = 68;
             this.cbEnableChat.Text = "Enable Chat";
             this.cbEnableChat.UseVisualStyleBackColor = true;
             // 
+            // txtInstructionsFolder
+            // 
+            this.txtInstructionsFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInstructionsFolder.Location = new System.Drawing.Point(346, 299);
+            this.txtInstructionsFolder.Name = "txtInstructionsFolder";
+            this.txtInstructionsFolder.Size = new System.Drawing.Size(162, 26);
+            this.txtInstructionsFolder.TabIndex = 69;
+            this.txtInstructionsFolder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label21
+            // 
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(16, 302);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(324, 23);
+            this.label21.TabIndex = 70;
+            this.label21.Text = "Instructions Folder";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmSetup1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 406);
+            this.ClientSize = new System.Drawing.Size(891, 448);
             this.ControlBox = false;
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.txtInstructionsFolder);
             this.Controls.Add(this.cbEnableChat);
             this.Controls.Add(this.txtParmaterSetName);
             this.Controls.Add(this.label20);
@@ -583,5 +606,7 @@
         internal System.Windows.Forms.TextBox txtParmaterSetName;
         internal System.Windows.Forms.Label label20;
         internal System.Windows.Forms.CheckBox cbEnableChat;
+        internal System.Windows.Forms.TextBox txtInstructionsFolder;
+        internal System.Windows.Forms.Label label21;
     }
 }

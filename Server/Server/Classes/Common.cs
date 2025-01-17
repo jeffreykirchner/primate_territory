@@ -60,6 +60,7 @@ namespace Server
         public static bool showPartnerInfo = true;             //show partner info subject on their screen   
         public static float earningsMultiplier = 1;            //multiple points by this to get us dollars
         public static bool enableChat = false;                 //enable chat feature
+        public static string instructionsFolder = "";             //sub folder for instruction files
 
         public static Treatment[] treaments = new Treatment[100];    //list of each available treatment
         public static int treatmentCount = 0;                        //number of " 
@@ -107,6 +108,7 @@ namespace Server
             locationIncrement = float.Parse(INI.getINI(Common.sfile, "gameSettings", "locationIncrement"));
             earningsMultiplier = float.Parse(INI.getINI(Common.sfile, "gameSettings", "earningsMultiplier"));
             enableChat = bool.Parse(INI.getINI(Common.sfile, "gameSettings", "enableChat"));
+            instructionsFolder = INI.getINI(Common.sfile, "gameSettings", "instructionsFolder");
 
             showPartnerInfo = bool.Parse(INI.getINI(sfile, "gameSettings", "showPartnerInfo"));
             showInstructions = bool.Parse(INI.getINI(sfile, "gameSettings", "showInstructions"));

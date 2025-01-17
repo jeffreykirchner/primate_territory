@@ -47,6 +47,7 @@ namespace Client
         public static bool showPartnerInfo = true;             //show partner info subject on their screen
         public static float earningsMultiplier = 1;            //multiple points by this to get us dollars
         public static bool enableChat = false;                 //enable chat feature
+        public static string instructionsFolder = "";           //sub folder for instructions
 
         public static int myType;                              //1 or 2 (Red , Blue) 
 
@@ -198,6 +199,7 @@ namespace Client
                 earningsMultiplier = float.Parse(msgtokens[nextToken++]);
                 showPartnerInfo = bool.Parse(msgtokens[nextToken++]);
                 enableChat = bool.Parse(msgtokens[nextToken++]);
+                instructionsFolder = msgtokens[nextToken++];
 
                 instructionPlayerLeft = float.Parse(msgtokens[nextToken++]);
                 instructionPlayerRight = float.Parse(msgtokens[nextToken++]);

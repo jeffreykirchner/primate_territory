@@ -138,7 +138,7 @@ namespace Client
         {
             try
             {
-                string folder = "";
+                string folder = Common.instructionsFolder;
 
                 RichTextBox1.LoadFile(Application.StartupPath + "\\instructions\\" + folder + "\\page" + currentInstruction + ".rtf");
 

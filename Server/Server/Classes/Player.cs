@@ -111,6 +111,7 @@ namespace Server
                 outstr += Common.earningsMultiplier + ";";
                 outstr += Common.showPartnerInfo + ";";
                 outstr += Common.enableChat + ";";
+                outstr += Common.instructionsFolder + ";";
 
                 outstr += Common.instructionPlayerLeft + ";";
                 outstr += Common.instructionPlayerRight + ";";
