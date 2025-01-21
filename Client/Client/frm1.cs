@@ -972,7 +972,7 @@ namespace Client
                     {
                         //pnlMain.Enabled = false;
                         cmdSubmit.Visible = false;
-                        Common.FrmInstructions.pagesDone[2] = true;
+                        Common.FrmInstructions.pagesDone[Common.instructionPageSliders] = true;
                         txtMessages.Text = "";
                     }
                 }
@@ -1222,9 +1222,10 @@ namespace Client
 
                 if (heighlightRevenue || heighlightCost || heighlightProfit)
                 {
-                    if (Common.showInstructions && Common.FrmInstructions.currentInstruction == 3)
+                    if (Common.showInstructions && 
+                        Common.FrmInstructions.currentInstruction == Common.instructionPageTable)
                     {
-                        Common.FrmInstructions.pagesDone[3] = true;
+                        Common.FrmInstructions.pagesDone[Common.instructionPageTable] = true;
                     }
 
                     refreshScreen();
@@ -1260,6 +1261,12 @@ namespace Client
                 if (txtChat.Text == "") return;
                 Common.FrmClient.SC.sendMessage("04", txtChat.Text);
                 txtChat.Text = "";
+
+                if (Common.showInstructions &&
+                    Common.FrmInstructions.currentInstruction == Common.instructionPageChat)
+                {
+                    Common.FrmInstructions.pagesDone[Common.instructionPageChat] = true;
+                }
             }
             catch (Exception ex)
             {

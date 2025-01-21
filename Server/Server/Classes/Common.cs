@@ -75,12 +75,17 @@ namespace Server
         public static bool replayWritten = false;                //true after replay file is written
 
         //instruction example parameters
+        public static int instructionPages;
         public static float instructionPlayerLeft;
         public static float instructionPlayerRight;
         public static float instructionPartnerLeft1;
         public static float instructionPartnerRight1;
         public static float instructionPartnerLeft2;
         public static float instructionPartnerRight2;
+        public static int instructionPageSliders;
+        public static int instructionPageTable;
+        public static int instructionPageChat;
+        public static int instructionPageExample2;
 
         public static void start()
         {
@@ -114,13 +119,18 @@ namespace Server
             showInstructions = bool.Parse(INI.getINI(sfile, "gameSettings", "showInstructions"));
             testMode = bool.Parse(INI.getINI(sfile, "gameSettings", "testMode"));
 
+            instructionPages = int.Parse(INI.getINI(Common.sfile, "gameSettings", "instructionPages"));
             instructionPlayerLeft = float.Parse(INI.getINI(Common.sfile, "gameSettings", "instructionPlayerLeft"));
             instructionPlayerRight = float.Parse(INI.getINI(Common.sfile, "gameSettings", "instructionPlayerRight"));
             instructionPartnerLeft1 = float.Parse(INI.getINI(Common.sfile, "gameSettings", "instructionPartnerLeft1"));
             instructionPartnerRight1 = float.Parse(INI.getINI(Common.sfile, "gameSettings", "instructionPartnerRight1"));
             instructionPartnerLeft2 = float.Parse(INI.getINI(Common.sfile, "gameSettings", "instructionPartnerLeft2"));
             instructionPartnerRight2 = float.Parse(INI.getINI(Common.sfile, "gameSettings", "instructionPartnerRight2"));
-    }
+            instructionPageSliders = int.Parse(INI.getINI(Common.sfile, "gameSettings", "instructionPageSliders"));
+            instructionPageTable = int.Parse(INI.getINI(Common.sfile, "gameSettings", "instructionPageTable"));
+            instructionPageChat = int.Parse(INI.getINI(Common.sfile, "gameSettings", "instructionPageChat"));
+            instructionPageExample2 = int.Parse(INI.getINI(Common.sfile, "gameSettings", "instructionPageExample2"));
+        }
 
         //process incoming message from a client
         public static void takeMessage(List<string> sinstr)

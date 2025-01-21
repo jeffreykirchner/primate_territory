@@ -73,6 +73,16 @@
             this.cbEnableChat = new System.Windows.Forms.CheckBox();
             this.txtInstructionsFolder = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.txtInstructionPageSliders = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtInstructionPageTable = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtInstructionPageChat = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtInstructionPageExample2 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtInstructionPages = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbTestMode
@@ -253,7 +263,7 @@
             // cmdSaveAndClose
             // 
             this.cmdSaveAndClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdSaveAndClose.Location = new System.Drawing.Point(603, 391);
+            this.cmdSaveAndClose.Location = new System.Drawing.Point(243, 431);
             this.cmdSaveAndClose.Name = "cmdSaveAndClose";
             this.cmdSaveAndClose.Size = new System.Drawing.Size(276, 31);
             this.cmdSaveAndClose.TabIndex = 21;
@@ -313,17 +323,17 @@
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(580, 15);
+            this.label11.Location = new System.Drawing.Point(703, 11);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(290, 23);
+            this.label11.Size = new System.Drawing.Size(110, 23);
             this.label11.TabIndex = 51;
-            this.label11.Text = "Instruction Examples";
+            this.label11.Text = "Instructions";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtInstructionPlayerLeft
             // 
             this.txtInstructionPlayerLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInstructionPlayerLeft.Location = new System.Drawing.Point(787, 41);
+            this.txtInstructionPlayerLeft.Location = new System.Drawing.Point(787, 88);
             this.txtInstructionPlayerLeft.Name = "txtInstructionPlayerLeft";
             this.txtInstructionPlayerLeft.Size = new System.Drawing.Size(92, 26);
             this.txtInstructionPlayerLeft.TabIndex = 53;
@@ -332,7 +342,7 @@
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(607, 43);
+            this.label13.Location = new System.Drawing.Point(607, 90);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(174, 23);
             this.label13.TabIndex = 52;
@@ -342,7 +352,7 @@
             // txtInstructionPlayerRight
             // 
             this.txtInstructionPlayerRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInstructionPlayerRight.Location = new System.Drawing.Point(787, 73);
+            this.txtInstructionPlayerRight.Location = new System.Drawing.Point(787, 120);
             this.txtInstructionPlayerRight.Name = "txtInstructionPlayerRight";
             this.txtInstructionPlayerRight.Size = new System.Drawing.Size(92, 26);
             this.txtInstructionPlayerRight.TabIndex = 55;
@@ -351,7 +361,7 @@
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(607, 75);
+            this.label14.Location = new System.Drawing.Point(607, 122);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(174, 23);
             this.label14.TabIndex = 54;
@@ -361,7 +371,7 @@
             // txtInstructionPartnerRight1
             // 
             this.txtInstructionPartnerRight1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInstructionPartnerRight1.Location = new System.Drawing.Point(787, 137);
+            this.txtInstructionPartnerRight1.Location = new System.Drawing.Point(787, 184);
             this.txtInstructionPartnerRight1.Name = "txtInstructionPartnerRight1";
             this.txtInstructionPartnerRight1.Size = new System.Drawing.Size(92, 26);
             this.txtInstructionPartnerRight1.TabIndex = 59;
@@ -370,7 +380,7 @@
             // label15
             // 
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(560, 139);
+            this.label15.Location = new System.Drawing.Point(560, 186);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(221, 23);
             this.label15.TabIndex = 58;
@@ -380,7 +390,7 @@
             // txtInstructionPartnerLeft1
             // 
             this.txtInstructionPartnerLeft1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInstructionPartnerLeft1.Location = new System.Drawing.Point(787, 105);
+            this.txtInstructionPartnerLeft1.Location = new System.Drawing.Point(787, 152);
             this.txtInstructionPartnerLeft1.Name = "txtInstructionPartnerLeft1";
             this.txtInstructionPartnerLeft1.Size = new System.Drawing.Size(92, 26);
             this.txtInstructionPartnerLeft1.TabIndex = 57;
@@ -389,7 +399,7 @@
             // label16
             // 
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(556, 107);
+            this.label16.Location = new System.Drawing.Point(556, 154);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(225, 23);
             this.label16.TabIndex = 56;
@@ -399,7 +409,7 @@
             // txtInstructionPartnerRight2
             // 
             this.txtInstructionPartnerRight2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInstructionPartnerRight2.Location = new System.Drawing.Point(787, 201);
+            this.txtInstructionPartnerRight2.Location = new System.Drawing.Point(787, 248);
             this.txtInstructionPartnerRight2.Name = "txtInstructionPartnerRight2";
             this.txtInstructionPartnerRight2.Size = new System.Drawing.Size(92, 26);
             this.txtInstructionPartnerRight2.TabIndex = 63;
@@ -408,7 +418,7 @@
             // label17
             // 
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(560, 203);
+            this.label17.Location = new System.Drawing.Point(560, 250);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(221, 23);
             this.label17.TabIndex = 62;
@@ -418,7 +428,7 @@
             // txtInstructionPartnerLeft2
             // 
             this.txtInstructionPartnerLeft2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInstructionPartnerLeft2.Location = new System.Drawing.Point(787, 169);
+            this.txtInstructionPartnerLeft2.Location = new System.Drawing.Point(787, 216);
             this.txtInstructionPartnerLeft2.Name = "txtInstructionPartnerLeft2";
             this.txtInstructionPartnerLeft2.Size = new System.Drawing.Size(92, 26);
             this.txtInstructionPartnerLeft2.TabIndex = 61;
@@ -427,7 +437,7 @@
             // label18
             // 
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(556, 171);
+            this.label18.Location = new System.Drawing.Point(556, 218);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(225, 23);
             this.label18.TabIndex = 60;
@@ -502,12 +512,119 @@
             this.label21.Text = "Instructions Folder";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // txtInstructionPageSliders
+            // 
+            this.txtInstructionPageSliders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInstructionPageSliders.Location = new System.Drawing.Point(787, 298);
+            this.txtInstructionPageSliders.Name = "txtInstructionPageSliders";
+            this.txtInstructionPageSliders.Size = new System.Drawing.Size(92, 26);
+            this.txtInstructionPageSliders.TabIndex = 72;
+            this.txtInstructionPageSliders.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label22
+            // 
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(560, 300);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(221, 23);
+            this.label22.TabIndex = 71;
+            this.label22.Text = "Slider Action Page";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtInstructionPageTable
+            // 
+            this.txtInstructionPageTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInstructionPageTable.Location = new System.Drawing.Point(787, 330);
+            this.txtInstructionPageTable.Name = "txtInstructionPageTable";
+            this.txtInstructionPageTable.Size = new System.Drawing.Size(92, 26);
+            this.txtInstructionPageTable.TabIndex = 74;
+            this.txtInstructionPageTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label23
+            // 
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(560, 332);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(221, 23);
+            this.label23.TabIndex = 73;
+            this.label23.Text = "Table Action Page";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtInstructionPageChat
+            // 
+            this.txtInstructionPageChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInstructionPageChat.Location = new System.Drawing.Point(787, 394);
+            this.txtInstructionPageChat.Name = "txtInstructionPageChat";
+            this.txtInstructionPageChat.Size = new System.Drawing.Size(92, 26);
+            this.txtInstructionPageChat.TabIndex = 76;
+            this.txtInstructionPageChat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label24
+            // 
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(560, 396);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(221, 23);
+            this.label24.TabIndex = 75;
+            this.label24.Text = "Chat Action Page";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtInstructionPageExample2
+            // 
+            this.txtInstructionPageExample2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInstructionPageExample2.Location = new System.Drawing.Point(787, 362);
+            this.txtInstructionPageExample2.Name = "txtInstructionPageExample2";
+            this.txtInstructionPageExample2.Size = new System.Drawing.Size(92, 26);
+            this.txtInstructionPageExample2.TabIndex = 78;
+            this.txtInstructionPageExample2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtInstructionPageExample2.TextChanged += new System.EventHandler(this.txtInstructionPageExample2_TextChanged);
+            // 
+            // label25
+            // 
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(560, 364);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(221, 23);
+            this.label25.TabIndex = 77;
+            this.label25.Text = "Example 2 Page";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label25.Click += new System.EventHandler(this.label25_Click);
+            // 
+            // txtInstructionPages
+            // 
+            this.txtInstructionPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInstructionPages.Location = new System.Drawing.Point(787, 41);
+            this.txtInstructionPages.Name = "txtInstructionPages";
+            this.txtInstructionPages.Size = new System.Drawing.Size(92, 26);
+            this.txtInstructionPages.TabIndex = 80;
+            this.txtInstructionPages.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label26
+            // 
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(560, 43);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(221, 23);
+            this.label26.TabIndex = 79;
+            this.label26.Text = "Number of Pages";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmSetup1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 448);
+            this.ClientSize = new System.Drawing.Size(891, 474);
             this.ControlBox = false;
+            this.Controls.Add(this.txtInstructionPages);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.txtInstructionPageExample2);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.txtInstructionPageChat);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.txtInstructionPageTable);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.txtInstructionPageSliders);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.txtInstructionsFolder);
             this.Controls.Add(this.cbEnableChat);
@@ -608,5 +725,15 @@
         internal System.Windows.Forms.CheckBox cbEnableChat;
         internal System.Windows.Forms.TextBox txtInstructionsFolder;
         internal System.Windows.Forms.Label label21;
+        internal System.Windows.Forms.TextBox txtInstructionPageSliders;
+        internal System.Windows.Forms.Label label22;
+        internal System.Windows.Forms.TextBox txtInstructionPageTable;
+        internal System.Windows.Forms.Label label23;
+        internal System.Windows.Forms.TextBox txtInstructionPageChat;
+        internal System.Windows.Forms.Label label24;
+        internal System.Windows.Forms.TextBox txtInstructionPageExample2;
+        internal System.Windows.Forms.Label label25;
+        internal System.Windows.Forms.TextBox txtInstructionPages;
+        internal System.Windows.Forms.Label label26;
     }
 }

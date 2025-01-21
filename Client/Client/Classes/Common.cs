@@ -65,13 +65,18 @@ namespace Client
         public static string[] commandLineArgs;
 
         //instruction example parameters
+        public static int instructionPages;
         public static float instructionPlayerLeft;
         public static float instructionPlayerRight;
         public static float instructionPartnerLeft1;
         public static float instructionPartnerRight1;
         public static float instructionPartnerLeft2;
         public static float instructionPartnerRight2;
-
+        public static int instructionPageSliders;
+        public static int instructionPageTable;
+        public static int instructionPageChat;
+        public static int instructionPageExample2;
+        
         public static void start()
         {
 
@@ -201,12 +206,17 @@ namespace Client
                 enableChat = bool.Parse(msgtokens[nextToken++]);
                 instructionsFolder = msgtokens[nextToken++];
 
+                instructionPages = int.Parse(msgtokens[nextToken++]);
                 instructionPlayerLeft = float.Parse(msgtokens[nextToken++]);
                 instructionPlayerRight = float.Parse(msgtokens[nextToken++]);
                 instructionPartnerLeft1 = float.Parse(msgtokens[nextToken++]);
                 instructionPartnerRight1 = float.Parse(msgtokens[nextToken++]);
                 instructionPartnerLeft2 = float.Parse(msgtokens[nextToken++]);
                 instructionPartnerRight2 = float.Parse(msgtokens[nextToken++]);
+                instructionPageSliders = int.Parse(msgtokens[nextToken++]);
+                instructionPageTable = int.Parse(msgtokens[nextToken++]);
+                instructionPageChat = int.Parse(msgtokens[nextToken++]);
+                instructionPageExample2 = int.Parse(msgtokens[nextToken++]);
 
                 Common.treatmentCount = int.Parse(msgtokens[nextToken++]);
                 for (int i = 1; i <= Common.treatmentCount; i++)
@@ -412,10 +422,12 @@ namespace Client
                     
                 }
 
-                Frm1.rtbChat.SelectionStart = Frm1.Text.Length;
+                //Frm1.rtbChat.DeselectAll();
+
+                //Frm1.rtbChat.SelectionStart = Frm1.Text.Length-1;
                 Frm1.rtbChat.ScrollToCaret();
 
-                Frm1.rtbChat.DeselectAll();
+                //Frm1.rtbChat.DeselectAll();
             }
             catch (Exception ex)
             {

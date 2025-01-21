@@ -13,7 +13,7 @@ namespace Client
     public partial class frmInstructions : Form
     {
        
-        public int numberOfPages = 6;
+        //public int numberOfPages = 6;
 
         public bool startPressed = false;
         public bool[] pagesDone = new bool[101];
@@ -29,11 +29,13 @@ namespace Client
         {
             try
             {
-                for (int i = 1; i <= numberOfPages; i++)
+                for (int i = 1; i <= 100; i++)
                 {
                     pagesDone[i] =false;
                 }
 
+
+                pagesDone[1] = true;
                 startPressed = false;
                 currentInstruction = 1;
 
@@ -111,17 +113,17 @@ namespace Client
 
                 cmdBack.Visible = true;
 
-                if (currentInstruction == numberOfPages)
+                if (currentInstruction == Common.instructionPages)
                     return;
 
                 currentInstruction += 1;
 
-                if (currentInstruction == numberOfPages & !startPressed)
+                if (currentInstruction == Common.instructionPages & !startPressed)
                 {
                     cmdStart.Visible = true;
                 }
 
-                if (currentInstruction == numberOfPages)
+                if (currentInstruction == Common.instructionPages)
                 {
                     cmdNext.Visible = false;
                 }
@@ -149,7 +151,7 @@ namespace Client
 
                 if (!startPressed) Common.FrmClient.SC.sendMessage("INSTRUCTION_PAGE", currentInstruction + ";");
 
-                Text = "Instructions, Page " + currentInstruction + "/" + numberOfPages;
+                Text = "Instructions, Page " + currentInstruction + "/" + Common.instructionPages;
 
             }
             catch (Exception ex)
@@ -206,77 +208,133 @@ namespace Client
 
                 RepRTBfield2("periodLength",s.ToString());
 
-                switch (currentInstruction)
+                if(currentInstruction == Common.instructionPageSliders)
                 {
-                    case 1:
-                        if (!pagesDone[currentInstruction])
-                        {
-                            pagesDone[currentInstruction] = true;
-                        }
-                        break;
-                    case 2:
-                        if (!pagesDone[currentInstruction])
-                        {
-                            
-                        }
-                        break;
-                    case 3:
-                        if (!pagesDone[currentInstruction])
-                        {
-                            Common.phase = "run";                           
+                    if (!pagesDone[currentInstruction])
+                    {
+                        Common.phase = "run";
 
-                            partner.selectionLeft = Common.instructionPartnerLeft1;
-                            partner.selectionRight = Common.instructionPartnerRight1;
+                        partner.selectionLeft = Common.instructionPartnerLeft1;
+                        partner.selectionRight = Common.instructionPartnerRight1;
 
-                            //send calculation request
+                        //send calculation request
 
-                            string str = "";
+                        string str = "";
 
-                            str += p.selectionLeft + ";";
-                            str += p.selectionRight + ";";
-                            str += partner.selectionLeft + ";";
-                            str += partner.selectionRight + ";";
+                        str += p.selectionLeft + ";";
+                        str += p.selectionRight + ";";
+                        str += partner.selectionLeft + ";";
+                        str += partner.selectionRight + ";";
 
-                            Common.FrmClient.SC.sendMessage("03", str);
-                        }
-                        break;
-                    case 4:
-                        if (!pagesDone[currentInstruction])
-                        {
-                            pagesDone[currentInstruction] = true;
-                        }
-                        break;
-                    case 5:
-                        if (!pagesDone[currentInstruction])
-                        {
-                            pagesDone[currentInstruction] = true;
-
-                            partner.selectionLeft = Common.instructionPartnerLeft2;
-                            partner.selectionRight = Common.instructionPartnerRight2;
-
-                            string str = "";
-
-                            str += p.selectionLeft + ";";
-                            str += p.selectionRight + ";";
-                            str += partner.selectionLeft + ";";
-                            str += partner.selectionRight + ";";
-
-                            Common.FrmClient.SC.sendMessage("03", str);
-                        }
-                        break;
-                    case 6:
-                        if (!pagesDone[currentInstruction])
-                        {
-                            pagesDone[currentInstruction] = true;
-                        }
-                        break;
-                    case 7:
-                        if (!pagesDone[currentInstruction])
-                        {
-                            pagesDone[currentInstruction] = true;
-                        }
-                        break;
+                        Common.FrmClient.SC.sendMessage("03", str);
+                    }
                 }
+                else if (currentInstruction == Common.instructionPageTable)
+                {
+
+                }
+                else if(currentInstruction == Common.instructionPageExample2)
+                {
+                    if (!pagesDone[currentInstruction])
+                    {
+                        pagesDone[currentInstruction] = true;
+
+                        partner.selectionLeft = Common.instructionPartnerLeft2;
+                        partner.selectionRight = Common.instructionPartnerRight2;
+
+                        string str = "";
+
+                        str += p.selectionLeft + ";";
+                        str += p.selectionRight + ";";
+                        str += partner.selectionLeft + ";";
+                        str += partner.selectionRight + ";";
+
+                        Common.FrmClient.SC.sendMessage("03", str);
+                    }
+                }
+                else if (currentInstruction == Common.instructionPageChat)
+                {
+
+                }
+                else
+                {
+                    if (!pagesDone[currentInstruction])
+                    {
+                        pagesDone[currentInstruction] = true;
+                    }
+                }
+
+                //    switch (currentInstruction)
+                //{
+                //    case Common.instructionPageSliders:
+                //        if (!pagesDone[currentInstruction])
+                //        {
+                           
+                //        }
+                //        break;
+                //    case 2:
+                //        if (!pagesDone[currentInstruction])
+                //        {
+                            
+                //        }
+                //        break;
+                //    case 3:
+                //        if (!pagesDone[currentInstruction])
+                //        {
+                //            Common.phase = "run";                           
+
+                //            partner.selectionLeft = Common.instructionPartnerLeft1;
+                //            partner.selectionRight = Common.instructionPartnerRight1;
+
+                //            //send calculation request
+
+                //            string str = "";
+
+                //            str += p.selectionLeft + ";";
+                //            str += p.selectionRight + ";";
+                //            str += partner.selectionLeft + ";";
+                //            str += partner.selectionRight + ";";
+
+                //            Common.FrmClient.SC.sendMessage("03", str);
+                //        }
+                //        break;
+                //    case 4:
+                //        if (!pagesDone[currentInstruction])
+                //        {
+                //            pagesDone[currentInstruction] = true;
+                //        }
+                //        break;
+                //    case 5:
+                //        if (!pagesDone[currentInstruction])
+                //        {
+                //            pagesDone[currentInstruction] = true;
+
+                //            partner.selectionLeft = Common.instructionPartnerLeft2;
+                //            partner.selectionRight = Common.instructionPartnerRight2;
+
+                //            string str = "";
+
+                //            str += p.selectionLeft + ";";
+                //            str += p.selectionRight + ";";
+                //            str += partner.selectionLeft + ";";
+                //            str += partner.selectionRight + ";";
+
+                //            Common.FrmClient.SC.sendMessage("03", str);
+                //        }
+                //        break;
+                //    case 6:
+                //        if (!pagesDone[currentInstruction])
+                //        {
+                //            pagesDone[currentInstruction] = true;
+                //        }
+                //        break;
+                //    case 7:
+                //        if (!pagesDone[currentInstruction])
+                //        {
+                //            pagesDone[currentInstruction] = true;
+                //        }
+                //        break;
+                //}
             }
             catch (Exception ex)
             {

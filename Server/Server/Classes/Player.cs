@@ -113,12 +113,17 @@ namespace Server
                 outstr += Common.enableChat + ";";
                 outstr += Common.instructionsFolder + ";";
 
+                outstr += Common.instructionPages + ";";
                 outstr += Common.instructionPlayerLeft + ";";
                 outstr += Common.instructionPlayerRight + ";";
                 outstr += Common.instructionPartnerLeft1 + ";";
                 outstr += Common.instructionPartnerRight1 + ";";
                 outstr += Common.instructionPartnerLeft2 + ";";
                 outstr += Common.instructionPartnerRight2 + ";";
+                outstr += Common.instructionPageSliders + ";";
+                outstr += Common.instructionPageTable + ";";
+                outstr += Common.instructionPageChat + ";";
+                outstr += Common.instructionPageExample2 + ";";
 
                 outstr += Common.treatmentCount + ";";
 
