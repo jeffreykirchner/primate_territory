@@ -1075,45 +1075,36 @@ namespace Client
                     }
                     else
                     {
-                        switch (Common.FrmInstructions.currentInstruction)
-                        {
-                            case 1:
-                                break;
-                            case 2:
-                                if (p.selectionLeft != Common.instructionPlayerLeft)
-                                {
-                                    p.selectionLeft = Common.instructionPlayerLeft;
-                                    p.selectionRight = Common.instructionPlayerRight;
-                                }
-                                else
-                                {
-                                    cmdSubmit.PerformClick();
-                                }
-                               
-                                break;
-                            case 3:
-                                if (Common.myType == 1)
-                                    checkIsOverKey(keyLocationLeft);
-                                else
-                                    checkIsOverKey(keyLocationRight);
-                                break;
-                            case 4:
-                                
-                                break;
-                            case 5:
-                               
-                                break;
-                            case 6:
-                                
-                                break;
-                            case 7:
-                                
-                                break;
-                            case 8:
-                                
-                                break;
 
-                        }
+                       if (Common.FrmInstructions.currentInstruction == Common.instructionPageSliders)
+                       {
+                            if (p.selectionLeft != Common.instructionPlayerLeft)
+                            {
+                                p.selectionLeft = Common.instructionPlayerLeft;
+                                p.selectionRight = Common.instructionPlayerRight;
+                            }
+                            else
+                            {
+                                cmdSubmit.PerformClick();
+                            }
+                       }
+                       else if (Common.FrmInstructions.currentInstruction == Common.instructionPageTable)
+                       {
+                            if (Common.myType == 1)
+                            {
+                                checkIsOverKey(keyLocationLeft);
+                            }
+                            else
+                            {
+                                checkIsOverKey(keyLocationRight);
+                            }
+                       }
+                       else if (Common.FrmInstructions.currentInstruction == Common.instructionPageChat)
+                       {
+                            txtChat.Text = "Hello";
+                            cmdChat.PerformClick();
+                       }
+                                            
                     }
 
                     return;
